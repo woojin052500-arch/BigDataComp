@@ -18,7 +18,7 @@ data/
 *.graphml
 *.tif
 *.tiff
-outputs/maps/*.png
+# outputs/maps 는 산출물이다 (구간2 검증지도, 구간3 01_P_전역.png 등) — 추적한다
 cache/
 
 # ── 파이썬 ─────────────────────────────────────────────
