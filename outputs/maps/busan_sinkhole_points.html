@@ -1,0 +1,3560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_236163b468eb60622e96222019e1e90f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <div style='position:fixed;bottom:24px;left:24px;z-index:9999;background:#fff;padding:10px 12px;border:1px solid #999;border-radius:6px;font:12px sans-serif'><b>지반침하 사고 151건</b><div><span style='display:inline-block;width:10px;height:10px;background:#1f77b4;border-radius:5px;margin-right:6px'></span>2018</div><div><span style='display:inline-block;width:10px;height:10px;background:#ff7f0e;border-radius:5px;margin-right:6px'></span>2019</div><div><span style='display:inline-block;width:10px;height:10px;background:#2ca02c;border-radius:5px;margin-right:6px'></span>2020</div><div><span style='display:inline-block;width:10px;height:10px;background:#d62728;border-radius:5px;margin-right:6px'></span>2021</div><div><span style='display:inline-block;width:10px;height:10px;background:#9467bd;border-radius:5px;margin-right:6px'></span>2022</div><div><span style='display:inline-block;width:10px;height:10px;background:#8c564b;border-radius:5px;margin-right:6px'></span>2023</div><div><span style='display:inline-block;width:10px;height:10px;background:#e377c2;border-radius:5px;margin-right:6px'></span>2024</div><div><span style='display:inline-block;width:10px;height:10px;background:#7f7f7f;border-radius:5px;margin-right:6px'></span>2025</div><div><span style='display:inline-block;width:10px;height:10px;background:#bcbd22;border-radius:5px;margin-right:6px'></span>2026</div></div>
+    
+            <div class="folium-map" id="map_236163b468eb60622e96222019e1e90f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_236163b468eb60622e96222019e1e90f = L.map(
+                "map_236163b468eb60622e96222019e1e90f",
+                {
+                    center: [35.18, 129.07],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_528390ac5c6f4ace1c9c767d5a1564fd = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_528390ac5c6f4ace1c9c767d5a1564fd.addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+            var circle_marker_a8390852968b4f16fc59af214b37df4f = L.circleMarker(
+                [35.1615878122937, 129.175024521484],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_fc27cd46759e3a9d3e18154ee464ee06 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_236c122dcfdb77de5c96cfe50f30a634 = $(`<div id="html_236c122dcfdb77de5c96cfe50f30a634" style="width: 100.0%; height: 100.0%;">20180026 | 20180126<br>해운대구 부산광역시 해운대구 좌동순환로 419<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×4.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_fc27cd46759e3a9d3e18154ee464ee06.setContent(html_236c122dcfdb77de5c96cfe50f30a634);
+            
+        
+
+        circle_marker_a8390852968b4f16fc59af214b37df4f.bindPopup(popup_fc27cd46759e3a9d3e18154ee464ee06)
+        ;
+
+        
+    
+    
+            var circle_marker_2bc7aa4b9e24c12d8be47391e7b527d1 = L.circleMarker(
+                [35.1455383782307, 129.113125189096],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_46e9ecee3fe63a2765505abdc3c50875 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b99e54325240e33a2f26354820cb7960 = $(`<div id="html_b99e54325240e33a2f26354820cb7960" style="width: 100.0%; height: 100.0%;">20180038 | 20180220<br>수영구 부산광역시 수영구<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.5×1.5×0.7m<br>정확도: 번지</div>`)[0];
+                popup_46e9ecee3fe63a2765505abdc3c50875.setContent(html_b99e54325240e33a2f26354820cb7960);
+            
+        
+
+        circle_marker_2bc7aa4b9e24c12d8be47391e7b527d1.bindPopup(popup_46e9ecee3fe63a2765505abdc3c50875)
+        ;
+
+        
+    
+    
+            var circle_marker_f62fce479bd44eed90b9431849a74d6c = L.circleMarker(
+                [35.1093905698861, 129.03186170110828],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_e498ecfd5f4db845e6f240a54f692ee3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_004e9e435f09b4ac81d22f85387587a0 = $(`<div id="html_004e9e435f09b4ac81d22f85387587a0" style="width: 100.0%; height: 100.0%;">20180047 | 20180307<br>중구 부산광역시 중구 영주동 모노레일<br>원인: 기타<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_e498ecfd5f4db845e6f240a54f692ee3.setContent(html_004e9e435f09b4ac81d22f85387587a0);
+            
+        
+
+        circle_marker_f62fce479bd44eed90b9431849a74d6c.bindPopup(popup_e498ecfd5f4db845e6f240a54f692ee3)
+        ;
+
+        
+    
+    
+            var circle_marker_7728c25a4c60838afd3f496600aecff1 = L.circleMarker(
+                [35.1623784634267, 129.188882861476],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_4ae82ac779cc2e5a01c278e71a3fdf2c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_28d4bf56d82122df65a68da78084d538 = $(`<div id="html_28d4bf56d82122df65a68da78084d538" style="width: 100.0%; height: 100.0%;">20180048 | 20180307<br>해운대구 부산광역시 해운대구 청사포로<br>원인: 하수관 손상<br>규모(W×L×D): 1.2×2.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_4ae82ac779cc2e5a01c278e71a3fdf2c.setContent(html_28d4bf56d82122df65a68da78084d538);
+            
+        
+
+        circle_marker_7728c25a4c60838afd3f496600aecff1.bindPopup(popup_4ae82ac779cc2e5a01c278e71a3fdf2c)
+        ;
+
+        
+    
+    
+            var circle_marker_977fa4037405a4a933eb65d5e5a85b3b = L.circleMarker(
+                [35.1054445328909, 128.96745833571],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_da3ce5e242a3858e8068bb4c31c1cd6e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_36f81256f2626a21e8c042e6df7f22d3 = $(`<div id="html_36f81256f2626a21e8c042e6df7f22d3" style="width: 100.0%; height: 100.0%;">20180050 | 20180308<br>사하구 부산광역시 사하구 하단동 하단오거리<br>원인: 기타매설공사 부실<br>규모(W×L×D): 1.0×1.0×3.0m<br>정확도: 번지</div>`)[0];
+                popup_da3ce5e242a3858e8068bb4c31c1cd6e.setContent(html_36f81256f2626a21e8c042e6df7f22d3);
+            
+        
+
+        circle_marker_977fa4037405a4a933eb65d5e5a85b3b.bindPopup(popup_da3ce5e242a3858e8068bb4c31c1cd6e)
+        ;
+
+        
+    
+    
+            var circle_marker_f357f25637c095f5a3062dcc697294a0 = L.circleMarker(
+                [35.1810381954891, 129.072153925174],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_38519434c2164c99c017fd564ea80288 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e0b5df6479c75c7e458ac217a7fc0388 = $(`<div id="html_e0b5df6479c75c7e458ac217a7fc0388" style="width: 100.0%; height: 100.0%;">20180068 | 20180319<br>연제구 부산광역시 연제구 거제시장로 14<br>원인: 상수관 손상<br>규모(W×L×D): 1.0×1.5×1.5m<br>정확도: 번지</div>`)[0];
+                popup_38519434c2164c99c017fd564ea80288.setContent(html_e0b5df6479c75c7e458ac217a7fc0388);
+            
+        
+
+        circle_marker_f357f25637c095f5a3062dcc697294a0.bindPopup(popup_38519434c2164c99c017fd564ea80288)
+        ;
+
+        
+    
+    
+            var circle_marker_cbbb813c272708063016c7901ebf5aab = L.circleMarker(
+                [35.1044479031517, 128.974932970701],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7eb853641452c7bdd878e34a9c67cd15 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_506a6b13609d34a9ab279f844f9f3841 = $(`<div id="html_506a6b13609d34a9ab279f844f9f3841" style="width: 100.0%; height: 100.0%;">20180075 | 20180328<br>사하구 부산광역시 사하구<br>원인: 기타<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_7eb853641452c7bdd878e34a9c67cd15.setContent(html_506a6b13609d34a9ab279f844f9f3841);
+            
+        
+
+        circle_marker_cbbb813c272708063016c7901ebf5aab.bindPopup(popup_7eb853641452c7bdd878e34a9c67cd15)
+        ;
+
+        
+    
+    
+            var circle_marker_3ea2b1e07871c89347b437885d8a0a0b = L.circleMarker(
+                [35.1579757517747, 129.064386827027],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_75f2b36c3aa2c73bbd1a45de2739797a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_24d0602830dc47fcdd985cc70ec81f26 = $(`<div id="html_24d0602830dc47fcdd985cc70ec81f26" style="width: 100.0%; height: 100.0%;">20180078 | 20180329<br>부산진구 부산광역시 부산진구 서전로 41<br>원인: 상수관 손상<br>규모(W×L×D): 2.0×7.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_75f2b36c3aa2c73bbd1a45de2739797a.setContent(html_24d0602830dc47fcdd985cc70ec81f26);
+            
+        
+
+        circle_marker_3ea2b1e07871c89347b437885d8a0a0b.bindPopup(popup_75f2b36c3aa2c73bbd1a45de2739797a)
+        ;
+
+        
+    
+    
+            var circle_marker_5551a763ace4c16bc47cca949989b338 = L.circleMarker(
+                [35.05776866672457, 128.96274615393605],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_39f8a549851b790ee4007748dc9078da = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_67aca6df56ec288a0df1fadbdd4374ce = $(`<div id="html_67aca6df56ec288a0df1fadbdd4374ce" style="width: 100.0%; height: 100.0%;">20180084 | 20180404<br>사하구 부산광역시 사하구 다대몰운대아파트207<br>원인: 상수관 손상<br>규모(W×L×D): 1.0×1.2×0.5m<br>정확도: 번지</div>`)[0];
+                popup_39f8a549851b790ee4007748dc9078da.setContent(html_67aca6df56ec288a0df1fadbdd4374ce);
+            
+        
+
+        circle_marker_5551a763ace4c16bc47cca949989b338.bindPopup(popup_39f8a549851b790ee4007748dc9078da)
+        ;
+
+        
+    
+    
+            var circle_marker_1d07ac3d061eb641b7c7db1040830cd5 = L.circleMarker(
+                [35.1988713541088, 129.097283847163],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_54c0a432c72375238a349bc02242d938 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_296a4870812e85cd786cb065bbc93f02 = $(`<div id="html_296a4870812e85cd786cb065bbc93f02" style="width: 100.0%; height: 100.0%;">20180090 | 20180411<br>동래구 부산광역시 동래구 반송로 202<br>원인: 기타<br>규모(W×L×D): 2.0×2.5×1.5m<br>정확도: 번지</div>`)[0];
+                popup_54c0a432c72375238a349bc02242d938.setContent(html_296a4870812e85cd786cb065bbc93f02);
+            
+        
+
+        circle_marker_1d07ac3d061eb641b7c7db1040830cd5.bindPopup(popup_54c0a432c72375238a349bc02242d938)
+        ;
+
+        
+    
+    
+            var circle_marker_129ce2786601b37049df71d394bb6434 = L.circleMarker(
+                [35.1285848215935, 129.085927415484],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_dbdd2e6fcdfff901b801e41a06172c24 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a5a6d565e674cf834fc750ce7a2b8589 = $(`<div id="html_a5a6d565e674cf834fc750ce7a2b8589" style="width: 100.0%; height: 100.0%;">20180099 | 20180419<br>남구 부산광역시 남구 유엔로84<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×2.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_dbdd2e6fcdfff901b801e41a06172c24.setContent(html_a5a6d565e674cf834fc750ce7a2b8589);
+            
+        
+
+        circle_marker_129ce2786601b37049df71d394bb6434.bindPopup(popup_dbdd2e6fcdfff901b801e41a06172c24)
+        ;
+
+        
+    
+    
+            var circle_marker_babe04de937bd5a429715a9c9823647d = L.circleMarker(
+                [35.1888389917444, 129.073320770712],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8acf8531b2a89f4bcc16b4d1e79ad2e6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_25493389c965cbf62572ea004e281a3f = $(`<div id="html_25493389c965cbf62572ea004e281a3f" style="width: 100.0%; height: 100.0%;">20180105 | 20180421<br>연제구 부산광역시 연제구 월드컵대로<br>원인: 상수관 손상<br>규모(W×L×D): 1.0×1.9×0.25m<br>정확도: 번지</div>`)[0];
+                popup_8acf8531b2a89f4bcc16b4d1e79ad2e6.setContent(html_25493389c965cbf62572ea004e281a3f);
+            
+        
+
+        circle_marker_babe04de937bd5a429715a9c9823647d.bindPopup(popup_8acf8531b2a89f4bcc16b4d1e79ad2e6)
+        ;
+
+        
+    
+    
+            var circle_marker_84913bcea6ecdd2297458ef80755fb80 = L.circleMarker(
+                [35.1606894732142, 129.149325026226],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2e32777f07eead1177becf057bb70fb1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ed0ea0d47f48d1d3847745f1d4f876c8 = $(`<div id="html_ed0ea0d47f48d1d3847745f1d4f876c8" style="width: 100.0%; height: 100.0%;">20180112 | 20180501<br>해운대구 부산광역시 해운대구 우동 운촌삼거리<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_2e32777f07eead1177becf057bb70fb1.setContent(html_ed0ea0d47f48d1d3847745f1d4f876c8);
+            
+        
+
+        circle_marker_84913bcea6ecdd2297458ef80755fb80.bindPopup(popup_2e32777f07eead1177becf057bb70fb1)
+        ;
+
+        
+    
+    
+            var circle_marker_0c6950666aefd119a10d758597b472b9 = L.circleMarker(
+                [35.2042859995421, 129.058768380716],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_293c999da58536f85685e73efed5ff6f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_483eb2bf2d286ccf84dfd2d7d5af690e = $(`<div id="html_483eb2bf2d286ccf84dfd2d7d5af690e" style="width: 100.0%; height: 100.0%;">20180136 | 20180530<br>동래구 부산광역시 동래구 온천동 1646<br>원인: 기타매설물 손상<br>규모(W×L×D): 1.0×2.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_293c999da58536f85685e73efed5ff6f.setContent(html_483eb2bf2d286ccf84dfd2d7d5af690e);
+            
+        
+
+        circle_marker_0c6950666aefd119a10d758597b472b9.bindPopup(popup_293c999da58536f85685e73efed5ff6f)
+        ;
+
+        
+    
+    
+            var circle_marker_fbcc47b9926dae4e5a596bd07af7ce40 = L.circleMarker(
+                [35.1422594921246, 128.977697928778],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ddf6127f0fba43a1e4b7b235527f5735 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a8a46d94a88e894536921aefd42caf41 = $(`<div id="html_a8a46d94a88e894536921aefd42caf41" style="width: 100.0%; height: 100.0%;">20180137 | 20180530<br>사상구 부산광역시 사상구 장인로 77<br>원인: 하수관 손상<br>규모(W×L×D): 4.0×8.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_ddf6127f0fba43a1e4b7b235527f5735.setContent(html_a8a46d94a88e894536921aefd42caf41);
+            
+        
+
+        circle_marker_fbcc47b9926dae4e5a596bd07af7ce40.bindPopup(popup_ddf6127f0fba43a1e4b7b235527f5735)
+        ;
+
+        
+    
+    
+            var circle_marker_e72c554ee14ffd1ab1e675b5f54b26af = L.circleMarker(
+                [35.1638104545377, 129.050961104127],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ee02556869799d3d2b8ea5d5fa1640a8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c320980497df10f68b8ea6e32e679018 = $(`<div id="html_c320980497df10f68b8ea6e32e679018" style="width: 100.0%; height: 100.0%;">20180158 | 20180608<br>부산진구 부산광역시 부산진구 신천대로 246<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.6×1.5×1.5m<br>정확도: 번지</div>`)[0];
+                popup_ee02556869799d3d2b8ea5d5fa1640a8.setContent(html_c320980497df10f68b8ea6e32e679018);
+            
+        
+
+        circle_marker_e72c554ee14ffd1ab1e675b5f54b26af.bindPopup(popup_ee02556869799d3d2b8ea5d5fa1640a8)
+        ;
+
+        
+    
+    
+            var circle_marker_580131442b10d579d16562a139037e57 = L.circleMarker(
+                [35.1739876844185, 129.094832108707],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_942920f2fa4118a68315f36b1950ae51 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_87a4d9eb07c31aff6a9a105a32fd8ee7 = $(`<div id="html_87a4d9eb07c31aff6a9a105a32fd8ee7" style="width: 100.0%; height: 100.0%;">20180174 | 20180619<br>연제구 부산광역시 연제구 배산로 24-1<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.0×1.0×0.8m<br>정확도: 번지</div>`)[0];
+                popup_942920f2fa4118a68315f36b1950ae51.setContent(html_87a4d9eb07c31aff6a9a105a32fd8ee7);
+            
+        
+
+        circle_marker_580131442b10d579d16562a139037e57.bindPopup(popup_942920f2fa4118a68315f36b1950ae51)
+        ;
+
+        
+    
+    
+            var circle_marker_7a008d733b6e64ed095adeb655acc98d = L.circleMarker(
+                [35.1375226791403, 128.97860489281155],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_f7f3e694a59f0aa189881f49290d73ef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_48eb1f1e9067eea21e79918c6878b1b3 = $(`<div id="html_48eb1f1e9067eea21e79918c6878b1b3" style="width: 100.0%; height: 100.0%;">20180195 | 20180701<br>사하구 부산광역시 사하구 반도보라아파트 102<br>원인: 하수관 손상<br>규모(W×L×D): 1.5×3.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_f7f3e694a59f0aa189881f49290d73ef.setContent(html_48eb1f1e9067eea21e79918c6878b1b3);
+            
+        
+
+        circle_marker_7a008d733b6e64ed095adeb655acc98d.bindPopup(popup_f7f3e694a59f0aa189881f49290d73ef)
+        ;
+
+        
+    
+    
+            var circle_marker_e9d0b7a09c099a7278ca1dac11d7dc5e = L.circleMarker(
+                [35.2050915314732, 129.083719021169],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_1a515901a5abb137ef9ea4376daa7e48 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7920b1643f5c531ecfbdab7c17d45966 = $(`<div id="html_7920b1643f5c531ecfbdab7c17d45966" style="width: 100.0%; height: 100.0%;">20180203 | 20180711<br>동래구 부산광역시 동래구<br>원인: 기타<br>규모(W×L×D): 3.5×3.5×3.6m<br>정확도: 도로/동</div>`)[0];
+                popup_1a515901a5abb137ef9ea4376daa7e48.setContent(html_7920b1643f5c531ecfbdab7c17d45966);
+            
+        
+
+        circle_marker_e9d0b7a09c099a7278ca1dac11d7dc5e.bindPopup(popup_1a515901a5abb137ef9ea4376daa7e48)
+        ;
+
+        
+    
+    
+            var circle_marker_b0bdf332522c1343005c5ad83378022f = L.circleMarker(
+                [35.1802102660518, 129.077435631797],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_d05017388eee10f7c2490cbf4c6afb52 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9eb311ba5a1e98148f0df92334b6233a = $(`<div id="html_9eb311ba5a1e98148f0df92334b6233a" style="width: 100.0%; height: 100.0%;">20180211 | 20180716<br>연제구 부산광역시 연제구 중앙대로1028<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.0×1.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_d05017388eee10f7c2490cbf4c6afb52.setContent(html_9eb311ba5a1e98148f0df92334b6233a);
+            
+        
+
+        circle_marker_b0bdf332522c1343005c5ad83378022f.bindPopup(popup_d05017388eee10f7c2490cbf4c6afb52)
+        ;
+
+        
+    
+    
+            var circle_marker_0e4ad879704e321ce8fef9f4b8eb4cef = L.circleMarker(
+                [35.1551869852172, 129.121770613644],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_357e0b12228c9d40d70eb6a9f27bb6b7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_daa06e65d80bc7710c0fc17bab30366d = $(`<div id="html_daa06e65d80bc7710c0fc17bab30366d" style="width: 100.0%; height: 100.0%;">20180217 | 20180719<br>수영구 부산광역시 수영구 광안해변로<br>원인: 기타<br>규모(W×L×D): 0.7×0.8×1.0m<br>정확도: 번지</div>`)[0];
+                popup_357e0b12228c9d40d70eb6a9f27bb6b7.setContent(html_daa06e65d80bc7710c0fc17bab30366d);
+            
+        
+
+        circle_marker_0e4ad879704e321ce8fef9f4b8eb4cef.bindPopup(popup_357e0b12228c9d40d70eb6a9f27bb6b7)
+        ;
+
+        
+    
+    
+            var circle_marker_c44c47c554a9047f282fa8c5aa96960c = L.circleMarker(
+                [35.1894170896488, 129.071430579451],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_4cfa289ef903e5d84f28852249cd2db4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6cb61d935d80d2258f44df3fcbc705f3 = $(`<div id="html_6cb61d935d80d2258f44df3fcbc705f3" style="width: 100.0%; height: 100.0%;">20180218 | 20180720<br>연제구 부산광역시 연제구 월드컵대로 233<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 1.0×1.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_4cfa289ef903e5d84f28852249cd2db4.setContent(html_6cb61d935d80d2258f44df3fcbc705f3);
+            
+        
+
+        circle_marker_c44c47c554a9047f282fa8c5aa96960c.bindPopup(popup_4cfa289ef903e5d84f28852249cd2db4)
+        ;
+
+        
+    
+    
+            var circle_marker_30b8fb181820d78c2f49e3f258f0e784 = L.circleMarker(
+                [35.2229958619963, 129.009029921406],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_53e35c475cd8e2dc97a7222520e63824 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1a34a9d559abb626cda1ca77058540cc = $(`<div id="html_1a34a9d559abb626cda1ca77058540cc" style="width: 100.0%; height: 100.0%;">20180220 | 20180723<br>북구 부산광역시 북구 화명동 941-1<br>원인: 다짐(되메우기) 불량<br>규모(W×L×D): 5.0×1.5×1.7m<br>정확도: 번지</div>`)[0];
+                popup_53e35c475cd8e2dc97a7222520e63824.setContent(html_1a34a9d559abb626cda1ca77058540cc);
+            
+        
+
+        circle_marker_30b8fb181820d78c2f49e3f258f0e784.bindPopup(popup_53e35c475cd8e2dc97a7222520e63824)
+        ;
+
+        
+    
+    
+            var circle_marker_1b9c73236374611129692ea6ccbefdd1 = L.circleMarker(
+                [35.1235910970804, 129.087577243636],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_af9646172cc7d7fa359f31ea48890c16 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7a09f8729db5cdf5ae3f5f721217c5ee = $(`<div id="html_7a09f8729db5cdf5ae3f5f721217c5ee" style="width: 100.0%; height: 100.0%;">20180225 | 20180726<br>남구 부산광역시 남구 석포로 64<br>원인: 기타<br>규모(W×L×D): 2.0×2.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_af9646172cc7d7fa359f31ea48890c16.setContent(html_7a09f8729db5cdf5ae3f5f721217c5ee);
+            
+        
+
+        circle_marker_1b9c73236374611129692ea6ccbefdd1.bindPopup(popup_af9646172cc7d7fa359f31ea48890c16)
+        ;
+
+        
+    
+    
+            var circle_marker_81c94b4fec963a7ceee70ac557db5020 = L.circleMarker(
+                [35.2174156978811, 129.020633524986],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_3577e3d5c5eae5c98362c31a1271d7df = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5f11c9dd511413de979273ee3c94c8b9 = $(`<div id="html_5f11c9dd511413de979273ee3c94c8b9" style="width: 100.0%; height: 100.0%;">20180229 | 20180802<br>북구 부산광역시 북구 덕천동 814-1<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×1.0×0.3m<br>정확도: 번지</div>`)[0];
+                popup_3577e3d5c5eae5c98362c31a1271d7df.setContent(html_5f11c9dd511413de979273ee3c94c8b9);
+            
+        
+
+        circle_marker_81c94b4fec963a7ceee70ac557db5020.bindPopup(popup_3577e3d5c5eae5c98362c31a1271d7df)
+        ;
+
+        
+    
+    
+            var circle_marker_31bb31898201494aa378ec78f5f6c782 = L.circleMarker(
+                [35.157910057708, 129.063546059012],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_b6ab295c4fc31f47ccaee38499d75e29 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2583b66b5ca5abe417f5d3191dcef8cb = $(`<div id="html_2583b66b5ca5abe417f5d3191dcef8cb" style="width: 100.0%; height: 100.0%;">20180230 | 20180806<br>부산진구 부산광역시 부산진구 서전로 35<br>원인: 굴착공사 부실<br>규모(W×L×D): 2.0×1.2×1.0m<br>정확도: 번지</div>`)[0];
+                popup_b6ab295c4fc31f47ccaee38499d75e29.setContent(html_2583b66b5ca5abe417f5d3191dcef8cb);
+            
+        
+
+        circle_marker_31bb31898201494aa378ec78f5f6c782.bindPopup(popup_b6ab295c4fc31f47ccaee38499d75e29)
+        ;
+
+        
+    
+    
+            var circle_marker_c8e3097c9f66efb5a77e35365359e35b = L.circleMarker(
+                [35.1765258048493, 129.085439791267],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_672d881243e30ba4e43c6fe672c223e5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7793974f98c8dd480ff2f16e9fd2a2d2 = $(`<div id="html_7793974f98c8dd480ff2f16e9fd2a2d2" style="width: 100.0%; height: 100.0%;">20180244 | 20180821<br>연제구 부산광역시 연제구 월드컵대로 21<br>원인: 상수관 손상<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_672d881243e30ba4e43c6fe672c223e5.setContent(html_7793974f98c8dd480ff2f16e9fd2a2d2);
+            
+        
+
+        circle_marker_c8e3097c9f66efb5a77e35365359e35b.bindPopup(popup_672d881243e30ba4e43c6fe672c223e5)
+        ;
+
+        
+    
+    
+            var circle_marker_67918dc309d3a81c52d0791da26d0d4b = L.circleMarker(
+                [35.0774922951687, 128.977505260763],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_1beb484ae5d385d47893cd12d76d7a8f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9c6a7599a2432e867b9746016684e78e = $(`<div id="html_9c6a7599a2432e867b9746016684e78e" style="width: 100.0%; height: 100.0%;">20180299 | 20181108<br>사하구 부산광역시 사하구 다대로 277<br>원인: 기타<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_1beb484ae5d385d47893cd12d76d7a8f.setContent(html_9c6a7599a2432e867b9746016684e78e);
+            
+        
+
+        circle_marker_67918dc309d3a81c52d0791da26d0d4b.bindPopup(popup_1beb484ae5d385d47893cd12d76d7a8f)
+        ;
+
+        
+    
+    
+            var circle_marker_43371c22d70711a03d5bc09041c66f8e = L.circleMarker(
+                [35.2330374817691, 129.085411414823],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0ecc95415e5b8c51a7a6d79afe4b8ce2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_42a5869ae2e48121fb6037e9569df06d = $(`<div id="html_42a5869ae2e48121fb6037e9569df06d" style="width: 100.0%; height: 100.0%;">20180311 | 20181205<br>금정구 부산광역시 금정구 금강로 279-1<br>원인: 기타<br>규모(W×L×D): 2.0×3.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_0ecc95415e5b8c51a7a6d79afe4b8ce2.setContent(html_42a5869ae2e48121fb6037e9569df06d);
+            
+        
+
+        circle_marker_43371c22d70711a03d5bc09041c66f8e.bindPopup(popup_0ecc95415e5b8c51a7a6d79afe4b8ce2)
+        ;
+
+        
+    
+    
+            var circle_marker_c84cff99961dd778577865d57dd5d723 = L.circleMarker(
+                [35.2403259752995, 129.219961481652],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2a2c492b7f5213d88e02760e5260eb33 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e4027b8d7c89e3f1ce6f566e7fce51c5 = $(`<div id="html_e4027b8d7c89e3f1ce6f566e7fce51c5" style="width: 100.0%; height: 100.0%;">20180314 | 20181213<br>기장군 부산광역시 기장군 청강리 795-9<br>원인: 하수관 손상<br>규모(W×L×D): 4.0×3.4×1.7m<br>정확도: 번지</div>`)[0];
+                popup_2a2c492b7f5213d88e02760e5260eb33.setContent(html_e4027b8d7c89e3f1ce6f566e7fce51c5);
+            
+        
+
+        circle_marker_c84cff99961dd778577865d57dd5d723.bindPopup(popup_2a2c492b7f5213d88e02760e5260eb33)
+        ;
+
+        
+    
+    
+            var circle_marker_93cf267a66fb78ce5e9e9b27b007bcf4 = L.circleMarker(
+                [35.0784378893469, 128.976992783572],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_6abaedfd97a0058c4f561b571425be8c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_18e2155bcc8c3c8d1e03e132a686d241 = $(`<div id="html_18e2155bcc8c3c8d1e03e132a686d241" style="width: 100.0%; height: 100.0%;">20190029 | 20190321<br>사하구 부산광역시 사하구 다대로 268-1<br>원인: 기타<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_6abaedfd97a0058c4f561b571425be8c.setContent(html_18e2155bcc8c3c8d1e03e132a686d241);
+            
+        
+
+        circle_marker_93cf267a66fb78ce5e9e9b27b007bcf4.bindPopup(popup_6abaedfd97a0058c4f561b571425be8c)
+        ;
+
+        
+    
+    
+            var circle_marker_23f3dfde93dcdf744777a75210e49ac1 = L.circleMarker(
+                [35.2112552329242, 129.062824347943],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2035427e1a53f5caca2173ae551384b0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9e66780722ce9429ccf7676c731e8d98 = $(`<div id="html_9e66780722ce9429ccf7676c731e8d98" style="width: 100.0%; height: 100.0%;">20190035 | 20190403<br>동래구 부산광역시 동래구 온천동 1134-26<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×3.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_2035427e1a53f5caca2173ae551384b0.setContent(html_9e66780722ce9429ccf7676c731e8d98);
+            
+        
+
+        circle_marker_23f3dfde93dcdf744777a75210e49ac1.bindPopup(popup_2035427e1a53f5caca2173ae551384b0)
+        ;
+
+        
+    
+    
+            var circle_marker_a9be87a3d370990abb6a4ef277400fc8 = L.circleMarker(
+                [35.2070824492915, 129.101808154632],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_168f09662b637a6e5e960737b4a7688c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_662103ad3a443a6b551a4b699f8b995a = $(`<div id="html_662103ad3a443a6b551a4b699f8b995a" style="width: 100.0%; height: 100.0%;">20190044 | 20190411<br>동래구 부산광역시 동래구 명서로 182<br>원인: 하수관 손상<br>규모(W×L×D): 2.0×3.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_168f09662b637a6e5e960737b4a7688c.setContent(html_662103ad3a443a6b551a4b699f8b995a);
+            
+        
+
+        circle_marker_a9be87a3d370990abb6a4ef277400fc8.bindPopup(popup_168f09662b637a6e5e960737b4a7688c)
+        ;
+
+        
+    
+    
+            var circle_marker_1278e8f2c5e8302f73c0e9e0b70a3432 = L.circleMarker(
+                [35.0921138845943, 128.903400973193],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_fec5b0d3fb4486b3857c932e7f956dad = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_76277bce73890a598061b10573d13b2a = $(`<div id="html_76277bce73890a598061b10573d13b2a" style="width: 100.0%; height: 100.0%;">20190052 | 20190422<br>강서구 부산광역시 강서구 명지동 3589-5<br>원인: 기타<br>규모(W×L×D): 27.0×13.4×1.4m<br>정확도: 번지</div>`)[0];
+                popup_fec5b0d3fb4486b3857c932e7f956dad.setContent(html_76277bce73890a598061b10573d13b2a);
+            
+        
+
+        circle_marker_1278e8f2c5e8302f73c0e9e0b70a3432.bindPopup(popup_fec5b0d3fb4486b3857c932e7f956dad)
+        ;
+
+        
+    
+    
+            var circle_marker_1459bbf00bab94699784bc9dd47710b4 = L.circleMarker(
+                [35.2136229787983, 129.071599951789],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0ed5931d041c8798dc76eae118427f75 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_76e8b474dad6d6d4a3c3f64658ce884b = $(`<div id="html_76e8b474dad6d6d4a3c3f64658ce884b" style="width: 100.0%; height: 100.0%;">20190054 | 20190423<br>동래구 부산광역시 동래구 우장춘로 67<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_0ed5931d041c8798dc76eae118427f75.setContent(html_76e8b474dad6d6d4a3c3f64658ce884b);
+            
+        
+
+        circle_marker_1459bbf00bab94699784bc9dd47710b4.bindPopup(popup_0ed5931d041c8798dc76eae118427f75)
+        ;
+
+        
+    
+    
+            var circle_marker_b3191e9cb4a1c9ea3cfe13951be444fb = L.circleMarker(
+                [35.0946695035888, 128.962693845867],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_60df18adae4b3aacf3200f494f2c0907 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_24f9fbf7f5d04e602126dc3786457bc2 = $(`<div id="html_24f9fbf7f5d04e602126dc3786457bc2" style="width: 100.0%; height: 100.0%;">20190063 | 20190511<br>사하구 부산광역시 사하구 신평동 409-9<br>원인: 기타매설물 손상<br>규모(W×L×D): 1.2×1.2×1.5m<br>정확도: 번지</div>`)[0];
+                popup_60df18adae4b3aacf3200f494f2c0907.setContent(html_24f9fbf7f5d04e602126dc3786457bc2);
+            
+        
+
+        circle_marker_b3191e9cb4a1c9ea3cfe13951be444fb.bindPopup(popup_60df18adae4b3aacf3200f494f2c0907)
+        ;
+
+        
+    
+    
+            var circle_marker_39e3635e4684061c59feffa4c3ede242 = L.circleMarker(
+                [35.2041785845367, 129.083064056207],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_25502561299e08b2c29660114d9693ee = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_118813745e04dd5af5390f7141a2dcda = $(`<div id="html_118813745e04dd5af5390f7141a2dcda" style="width: 100.0%; height: 100.0%;">20190065 | 20190513<br>동래구 부산광역시 동래구 명륜동 386<br>원인: 하수관 손상<br>규모(W×L×D): 0.5×2.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_25502561299e08b2c29660114d9693ee.setContent(html_118813745e04dd5af5390f7141a2dcda);
+            
+        
+
+        circle_marker_39e3635e4684061c59feffa4c3ede242.bindPopup(popup_25502561299e08b2c29660114d9693ee)
+        ;
+
+        
+    
+    
+            var circle_marker_233f85fa1bece8c704e6e7ec430be7d9 = L.circleMarker(
+                [35.1601118009925, 129.150504796282],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ceedc3c9cd1ab89a22510893c688dc54 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_385df96965df90f0d04a9fea74de29bd = $(`<div id="html_385df96965df90f0d04a9fea74de29bd" style="width: 100.0%; height: 100.0%;">20190112 | 20190620<br>해운대구 부산광역시 해운대구 우동 825-1<br>원인: 기타매설공사 부실<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_ceedc3c9cd1ab89a22510893c688dc54.setContent(html_385df96965df90f0d04a9fea74de29bd);
+            
+        
+
+        circle_marker_233f85fa1bece8c704e6e7ec430be7d9.bindPopup(popup_ceedc3c9cd1ab89a22510893c688dc54)
+        ;
+
+        
+    
+    
+            var circle_marker_cda9f2925449596618d57fdfda0c3477 = L.circleMarker(
+                [35.2055951079453, 129.069763869058],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_19260d3c18282320556946d7c553aff8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_82567a8fa87f4d170afce55d94ef873c = $(`<div id="html_82567a8fa87f4d170afce55d94ef873c" style="width: 100.0%; height: 100.0%;">20190117 | 20190622<br>동래구 부산광역시 동래구 미남로130<br>원인: 하수관 손상<br>규모(W×L×D): 2.0×3.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_19260d3c18282320556946d7c553aff8.setContent(html_82567a8fa87f4d170afce55d94ef873c);
+            
+        
+
+        circle_marker_cda9f2925449596618d57fdfda0c3477.bindPopup(popup_19260d3c18282320556946d7c553aff8)
+        ;
+
+        
+    
+    
+            var circle_marker_968856d1313dbf5bc1802787517c5f08 = L.circleMarker(
+                [35.0892077866042, 129.068615914574],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2ab83a93ef47c216578bc6ea0edf6aea = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dc86adcae21fb9382da626306c2f0f1f = $(`<div id="html_dc86adcae21fb9382da626306c2f0f1f" style="width: 100.0%; height: 100.0%;">20190127 | 20190627<br>영도구 부산광역시 영도구 태종로<br>원인: 상수관 손상<br>규모(W×L×D): 2.0×2.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_2ab83a93ef47c216578bc6ea0edf6aea.setContent(html_dc86adcae21fb9382da626306c2f0f1f);
+            
+        
+
+        circle_marker_968856d1313dbf5bc1802787517c5f08.bindPopup(popup_2ab83a93ef47c216578bc6ea0edf6aea)
+        ;
+
+        
+    
+    
+            var circle_marker_d699b5d199425111072df56025d1bbab = L.circleMarker(
+                [35.1969121231333, 129.012304982143],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_53687ed34e909258b1d4b094b50d11f3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8fadc59edef1af39a01cb67e6b20a639 = $(`<div id="html_8fadc59edef1af39a01cb67e6b20a639" style="width: 100.0%; height: 100.0%;">20190147 | 20190707<br>북구 부산광역시 북구 구포동 모분재로 145<br>원인: 하수관 손상<br>규모(W×L×D): 0.7×0.6×1.0m<br>정확도: 번지</div>`)[0];
+                popup_53687ed34e909258b1d4b094b50d11f3.setContent(html_8fadc59edef1af39a01cb67e6b20a639);
+            
+        
+
+        circle_marker_d699b5d199425111072df56025d1bbab.bindPopup(popup_53687ed34e909258b1d4b094b50d11f3)
+        ;
+
+        
+    
+    
+            var circle_marker_a3608a3b0e04f4e79e8e6ec7e48b75e0 = L.circleMarker(
+                [35.1503610112388, 129.087954792055],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_9ac266988ef0adda555ea1db5d46bf12 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec47bfdc4bae61345637369f41ba5f41 = $(`<div id="html_ec47bfdc4bae61345637369f41ba5f41" style="width: 100.0%; height: 100.0%;">20190148 | 20190711<br>남구 부산광역시 남구 대연동 245-150<br>원인: 하수관 손상<br>규모(W×L×D): 1.8×1.1×0.6m<br>정확도: 번지</div>`)[0];
+                popup_9ac266988ef0adda555ea1db5d46bf12.setContent(html_ec47bfdc4bae61345637369f41ba5f41);
+            
+        
+
+        circle_marker_a3608a3b0e04f4e79e8e6ec7e48b75e0.bindPopup(popup_9ac266988ef0adda555ea1db5d46bf12)
+        ;
+
+        
+    
+    
+            var circle_marker_9a18b25cb27e9f2991dc933cf50f4e6d = L.circleMarker(
+                [35.2801200984955, 129.08776767494],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_bdc31bae08ae1144b2d2b6d704b17b38 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_afd55b7b95d3aabc96b6247fbb04093f = $(`<div id="html_afd55b7b95d3aabc96b6247fbb04093f" style="width: 100.0%; height: 100.0%;">20190149 | 20190804<br>금정구 부산광역시 금정구 청룡동 310-1<br>원인: 상하수관공사 부실<br>규모(W×L×D): 0.8×1.8×0.8m<br>정확도: 번지</div>`)[0];
+                popup_bdc31bae08ae1144b2d2b6d704b17b38.setContent(html_afd55b7b95d3aabc96b6247fbb04093f);
+            
+        
+
+        circle_marker_9a18b25cb27e9f2991dc933cf50f4e6d.bindPopup(popup_bdc31bae08ae1144b2d2b6d704b17b38)
+        ;
+
+        
+    
+    
+            var circle_marker_bfcf844b34da2c90063ed48a5adf25c5 = L.circleMarker(
+                [35.158904740371, 128.98414225555],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_db3f3a00946b100c4fe4492e48ddc80a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d1dc7ecfa7001f2505151feb6f9f698e = $(`<div id="html_d1dc7ecfa7001f2505151feb6f9f698e" style="width: 100.0%; height: 100.0%;">20190150 | 20190810<br>사상구 부산광역시 사상구 새벽로 200<br>원인: 하수관 손상<br>규모(W×L×D): 1.0×3.0×0.15m<br>정확도: 번지</div>`)[0];
+                popup_db3f3a00946b100c4fe4492e48ddc80a.setContent(html_d1dc7ecfa7001f2505151feb6f9f698e);
+            
+        
+
+        circle_marker_bfcf844b34da2c90063ed48a5adf25c5.bindPopup(popup_db3f3a00946b100c4fe4492e48ddc80a)
+        ;
+
+        
+    
+    
+            var circle_marker_160576f26195340bfe1a895a79589bbe = L.circleMarker(
+                [35.1093703657366, 129.015793701374],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c1375705df8f38faf743a8777483d8ea = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9212c4f3b84385a552c6d5e751e4f801 = $(`<div id="html_9212c4f3b84385a552c6d5e751e4f801" style="width: 100.0%; height: 100.0%;">20190151 | 20190814<br>서구 부산광역시 서구 서대신동2가 543<br>원인: 기타<br>규모(W×L×D): 0.5×0.5×1.7m<br>정확도: 번지</div>`)[0];
+                popup_c1375705df8f38faf743a8777483d8ea.setContent(html_9212c4f3b84385a552c6d5e751e4f801);
+            
+        
+
+        circle_marker_160576f26195340bfe1a895a79589bbe.bindPopup(popup_c1375705df8f38faf743a8777483d8ea)
+        ;
+
+        
+    
+    
+            var circle_marker_216dc252aa7010c3adfc9c30de83484e = L.circleMarker(
+                [35.0894346878544, 128.85381766976],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_4dffd7da5eacd9a74a633bcb114d7576 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3035c579b4340e536067d3378ffdc053 = $(`<div id="html_3035c579b4340e536067d3378ffdc053" style="width: 100.0%; height: 100.0%;">20200064 | 20200603<br>강서구 부산광역시 강서구 송정동 1627-8<br>원인: nan<br>규모(W×L×D): 40.0×40.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_4dffd7da5eacd9a74a633bcb114d7576.setContent(html_3035c579b4340e536067d3378ffdc053);
+            
+        
+
+        circle_marker_216dc252aa7010c3adfc9c30de83484e.bindPopup(popup_4dffd7da5eacd9a74a633bcb114d7576)
+        ;
+
+        
+    
+    
+            var circle_marker_e1ddd6f015b5dfdd9c6484e16d767155 = L.circleMarker(
+                [35.0894883058961, 128.853322857998],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ac1be0c2295ecb88fa3fbfe3d75ce0ef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a350341669820c81ee645838b3edc165 = $(`<div id="html_a350341669820c81ee645838b3edc165" style="width: 100.0%; height: 100.0%;">20200065 | 20200229<br>강서구 부산광역시 강서구 송정동 1627-5<br>원인: nan<br>규모(W×L×D): 8.0×30.0×0.2m<br>정확도: 번지</div>`)[0];
+                popup_ac1be0c2295ecb88fa3fbfe3d75ce0ef.setContent(html_a350341669820c81ee645838b3edc165);
+            
+        
+
+        circle_marker_e1ddd6f015b5dfdd9c6484e16d767155.bindPopup(popup_ac1be0c2295ecb88fa3fbfe3d75ce0ef)
+        ;
+
+        
+    
+    
+            var circle_marker_b3c02e40a733a4ba06c6de52f4754a62 = L.circleMarker(
+                [35.0978411925049, 128.977256198969],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_d817159441108f10eaccd6388849b1a1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5a34dc03974d80c1c9d88c099dcd3850 = $(`<div id="html_5a34dc03974d80c1c9d88c099dcd3850" style="width: 100.0%; height: 100.0%;">20200066 | 20200313<br>사하구 부산광역시 사하구 다대로 52<br>원인: nan<br>규모(W×L×D): 1.0×1.5×0.9m<br>정확도: 번지</div>`)[0];
+                popup_d817159441108f10eaccd6388849b1a1.setContent(html_5a34dc03974d80c1c9d88c099dcd3850);
+            
+        
+
+        circle_marker_b3c02e40a733a4ba06c6de52f4754a62.bindPopup(popup_d817159441108f10eaccd6388849b1a1)
+        ;
+
+        
+    
+    
+            var circle_marker_12a5a63d4034ca4aa0294257aa1e5c6b = L.circleMarker(
+                [35.1619028320599, 128.982752069569],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_738421a97cc0b9c5f452d8ea50ab7070 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4a6b768f7c6feb5a38a62a808ef00d2a = $(`<div id="html_4a6b768f7c6feb5a38a62a808ef00d2a" style="width: 100.0%; height: 100.0%;">20200067 | 20200428<br>사상구 부산광역시 사상구 광장로 56<br>원인: nan<br>규모(W×L×D): 4.0×4.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_738421a97cc0b9c5f452d8ea50ab7070.setContent(html_4a6b768f7c6feb5a38a62a808ef00d2a);
+            
+        
+
+        circle_marker_12a5a63d4034ca4aa0294257aa1e5c6b.bindPopup(popup_738421a97cc0b9c5f452d8ea50ab7070)
+        ;
+
+        
+    
+    
+            var circle_marker_bf13486f4dc8c87ccb9d71f01ea275bd = L.circleMarker(
+                [35.0961329182273, 129.041810024183],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_dc17b5f86546123e4cb2229bf4203ee9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1f7407d425f2d87a304761a9ec557120 = $(`<div id="html_1f7407d425f2d87a304761a9ec557120" style="width: 100.0%; height: 100.0%;">20200068 | 20200506<br>영도구 부산광역시 영도구 봉래나루로<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.8m<br>정확도: 번지</div>`)[0];
+                popup_dc17b5f86546123e4cb2229bf4203ee9.setContent(html_1f7407d425f2d87a304761a9ec557120);
+            
+        
+
+        circle_marker_bf13486f4dc8c87ccb9d71f01ea275bd.bindPopup(popup_dc17b5f86546123e4cb2229bf4203ee9)
+        ;
+
+        
+    
+    
+            var circle_marker_31bd3eda10952d1507dbbaeeacda0c93 = L.circleMarker(
+                [35.2029567124999, 128.999443088592],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ee8c3857e3c11d8798e9ac6dfa25724a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fc93350b33361dfb7ef351b0a0106cd2 = $(`<div id="html_fc93350b33361dfb7ef351b0a0106cd2" style="width: 100.0%; height: 100.0%;">20200069 | 20200509<br>북구 부산광역시 북구 구포동 1002-9<br>원인: nan<br>규모(W×L×D): 1.5×2.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_ee8c3857e3c11d8798e9ac6dfa25724a.setContent(html_fc93350b33361dfb7ef351b0a0106cd2);
+            
+        
+
+        circle_marker_31bd3eda10952d1507dbbaeeacda0c93.bindPopup(popup_ee8c3857e3c11d8798e9ac6dfa25724a)
+        ;
+
+        
+    
+    
+            var circle_marker_edbd382b24c7266b30cf318bb76422e5 = L.circleMarker(
+                [35.1366867262003, 129.072922689407],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_037d94108b1131f0b30d7bd7427b7488 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d7c53749a21ebcdec650b6c2b068a635 = $(`<div id="html_d7c53749a21ebcdec650b6c2b068a635" style="width: 100.0%; height: 100.0%;">20200070 | 20200520<br>남구 부산광역시 남구 수영로 45<br>원인: nan<br>규모(W×L×D): 1.0×5.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_037d94108b1131f0b30d7bd7427b7488.setContent(html_d7c53749a21ebcdec650b6c2b068a635);
+            
+        
+
+        circle_marker_edbd382b24c7266b30cf318bb76422e5.bindPopup(popup_037d94108b1131f0b30d7bd7427b7488)
+        ;
+
+        
+    
+    
+            var circle_marker_07c3e1ff2c79d3a53491762d45b1fd85 = L.circleMarker(
+                [35.1385022734637, 129.06769887758],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ddc5df27f7f80fae7dce5082d88eb5a6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_24f3ea0ba529486ffdae3b4c43101d7e = $(`<div id="html_24f3ea0ba529486ffdae3b4c43101d7e" style="width: 100.0%; height: 100.0%;">20200071 | 20200622<br>남구 부산광역시 남구 문현동 651-6<br>원인: nan<br>규모(W×L×D): 0.5×0.8×1.5m<br>정확도: 번지</div>`)[0];
+                popup_ddc5df27f7f80fae7dce5082d88eb5a6.setContent(html_24f3ea0ba529486ffdae3b4c43101d7e);
+            
+        
+
+        circle_marker_07c3e1ff2c79d3a53491762d45b1fd85.bindPopup(popup_ddc5df27f7f80fae7dce5082d88eb5a6)
+        ;
+
+        
+    
+    
+            var circle_marker_0952765dfb8e39f81aed9d9385207c8d = L.circleMarker(
+                [35.0835510410136, 129.024905621208],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_272ceea964a0d40225bf1245c10782d7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a0a94f0ddce370e45a3ebc39cc79549e = $(`<div id="html_a0a94f0ddce370e45a3ebc39cc79549e" style="width: 100.0%; height: 100.0%;">20200072 | 20200626<br>서구 부산광역시 서구 충무대로<br>원인: nan<br>규모(W×L×D): 1.5×1.5×0.7m<br>정확도: 번지</div>`)[0];
+                popup_272ceea964a0d40225bf1245c10782d7.setContent(html_a0a94f0ddce370e45a3ebc39cc79549e);
+            
+        
+
+        circle_marker_0952765dfb8e39f81aed9d9385207c8d.bindPopup(popup_272ceea964a0d40225bf1245c10782d7)
+        ;
+
+        
+    
+    
+            var circle_marker_6a84c2d637e997bdd44a0aa65bd6bcd8 = L.circleMarker(
+                [35.1593279510206, 128.967043212853],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_5b1b95d2effdc6996c96107b01336c47 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7e6def34036d028c568f91641ad940da = $(`<div id="html_7e6def34036d028c568f91641ad940da" style="width: 100.0%; height: 100.0%;">20200094 | 20200318<br>사상구 부산광역시 사상구 삼락동 29-61<br>원인: nan<br>규모(W×L×D): 50.0×50.0×10.0m<br>정확도: 번지</div>`)[0];
+                popup_5b1b95d2effdc6996c96107b01336c47.setContent(html_7e6def34036d028c568f91641ad940da);
+            
+        
+
+        circle_marker_6a84c2d637e997bdd44a0aa65bd6bcd8.bindPopup(popup_5b1b95d2effdc6996c96107b01336c47)
+        ;
+
+        
+    
+    
+            var circle_marker_1e700cf53357a27a76f72f6ab59bd3d5 = L.circleMarker(
+                [35.1865439179141, 129.080968530527],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_3b70efb28caf6ea9ca7e8fea884cb0eb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1d48c046e368c1865226184b93beb009 = $(`<div id="html_1d48c046e368c1865226184b93beb009" style="width: 100.0%; height: 100.0%;">20200142 | 20201005<br>연제구 부산광역시 연제구 연산동 월드컵대로140<br>원인: nan<br>규모(W×L×D): 3.0×8.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_3b70efb28caf6ea9ca7e8fea884cb0eb.setContent(html_1d48c046e368c1865226184b93beb009);
+            
+        
+
+        circle_marker_1e700cf53357a27a76f72f6ab59bd3d5.bindPopup(popup_3b70efb28caf6ea9ca7e8fea884cb0eb)
+        ;
+
+        
+    
+    
+            var circle_marker_555383c1e5c012c8a0bd14317c5ad714 = L.circleMarker(
+                [35.1150762763457, 129.031881822233],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_148104922d60607786de4c41c6105f25 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec12e18b44e15d8ba53385126bccc8ac = $(`<div id="html_ec12e18b44e15d8ba53385126bccc8ac" style="width: 100.0%; height: 100.0%;">20200177 | 20200730<br>중구 부산광역시 중구 영주동 1-144<br>원인: nan<br>규모(W×L×D): 3.0×2.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_148104922d60607786de4c41c6105f25.setContent(html_ec12e18b44e15d8ba53385126bccc8ac);
+            
+        
+
+        circle_marker_555383c1e5c012c8a0bd14317c5ad714.bindPopup(popup_148104922d60607786de4c41c6105f25)
+        ;
+
+        
+    
+    
+            var circle_marker_0b3aacbeae2dd81e4df65c3bd37b11dc = L.circleMarker(
+                [35.2196159951432, 129.098820738189],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_6a07e6f8e72fcbb7195e545194264aea = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0bd98604c8b2bd1e22b899320e4fb4df = $(`<div id="html_0bd98604c8b2bd1e22b899320e4fb4df" style="width: 100.0%; height: 100.0%;">20200192 | 20200809<br>금정구 부산광역시 금정구 서동 서동 502-4<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_6a07e6f8e72fcbb7195e545194264aea.setContent(html_0bd98604c8b2bd1e22b899320e4fb4df);
+            
+        
+
+        circle_marker_0b3aacbeae2dd81e4df65c3bd37b11dc.bindPopup(popup_6a07e6f8e72fcbb7195e545194264aea)
+        ;
+
+        
+    
+    
+            var circle_marker_8ee91500aaabb66c3af1710e039f7c6e = L.circleMarker(
+                [35.2429356225492, 129.084468256178],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_28cb2d5355d5746596b0fd511e936475 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9f395351b978d2161a621178844c94eb = $(`<div id="html_9f395351b978d2161a621178844c94eb" style="width: 100.0%; height: 100.0%;">20200193 | 20200819<br>금정구 부산광역시 금정구 장전동 장전동 732<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_28cb2d5355d5746596b0fd511e936475.setContent(html_9f395351b978d2161a621178844c94eb);
+            
+        
+
+        circle_marker_8ee91500aaabb66c3af1710e039f7c6e.bindPopup(popup_28cb2d5355d5746596b0fd511e936475)
+        ;
+
+        
+    
+    
+            var circle_marker_61c041a8eece97c23dc1cfc622ea9169 = L.circleMarker(
+                [35.2227727689344, 129.095770618487],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_34bc5dd40425fab1865fc9f17354e0eb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_40720b54e75703510c21c433d63c13ce = $(`<div id="html_40720b54e75703510c21c433d63c13ce" style="width: 100.0%; height: 100.0%;">20200194 | 20200828<br>금정구 부산광역시 금정구 부곡동 동현로 65-1<br>원인: nan<br>규모(W×L×D): 3.0×2.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_34bc5dd40425fab1865fc9f17354e0eb.setContent(html_40720b54e75703510c21c433d63c13ce);
+            
+        
+
+        circle_marker_61c041a8eece97c23dc1cfc622ea9169.bindPopup(popup_34bc5dd40425fab1865fc9f17354e0eb)
+        ;
+
+        
+    
+    
+            var circle_marker_2a05724a294a1d7b4c80080be3360708 = L.circleMarker(
+                [35.1440807734634, 129.059726174375],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7920fa91c1bbd99a6fccfb9a4bc061f9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6179b99cd5f4869f54e8061e9d880549 = $(`<div id="html_6179b99cd5f4869f54e8061e9d880549" style="width: 100.0%; height: 100.0%;">20200236 | 20200706<br>부산진구 부산광역시 부산진구 범천동 847-2<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.8m<br>정확도: 번지</div>`)[0];
+                popup_7920fa91c1bbd99a6fccfb9a4bc061f9.setContent(html_6179b99cd5f4869f54e8061e9d880549);
+            
+        
+
+        circle_marker_2a05724a294a1d7b4c80080be3360708.bindPopup(popup_7920fa91c1bbd99a6fccfb9a4bc061f9)
+        ;
+
+        
+    
+    
+            var circle_marker_ae0159ea5b7b79af6566b7aa465edbf0 = L.circleMarker(
+                [35.1572562696178, 129.071226616737],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_e075b48204aeeaa599deb1edb239fc17 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_219d037bc8f0cbc87b903af51a81a5f3 = $(`<div id="html_219d037bc8f0cbc87b903af51a81a5f3" style="width: 100.0%; height: 100.0%;">20200237 | 20200711<br>부산진구 부산광역시 부산진구 전포동<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.5m<br>정확도: 도로/동</div>`)[0];
+                popup_e075b48204aeeaa599deb1edb239fc17.setContent(html_219d037bc8f0cbc87b903af51a81a5f3);
+            
+        
+
+        circle_marker_ae0159ea5b7b79af6566b7aa465edbf0.bindPopup(popup_e075b48204aeeaa599deb1edb239fc17)
+        ;
+
+        
+    
+    
+            var circle_marker_96f760cd4ba452a52b78280314807164 = L.circleMarker(
+                [35.146387866622, 129.01644586069],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0597377406a7151a98fd81b171600d20 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d5629db331da688dca10b06b2901bbbc = $(`<div id="html_d5629db331da688dca10b06b2901bbbc" style="width: 100.0%; height: 100.0%;">20200238 | 20200724<br>부산진구 부산광역시 부산진구 개금동 진사로<br>원인: nan<br>규모(W×L×D): 1.2×1.2×0.3m<br>정확도: 도로/동</div>`)[0];
+                popup_0597377406a7151a98fd81b171600d20.setContent(html_d5629db331da688dca10b06b2901bbbc);
+            
+        
+
+        circle_marker_96f760cd4ba452a52b78280314807164.bindPopup(popup_0597377406a7151a98fd81b171600d20)
+        ;
+
+        
+    
+    
+            var circle_marker_91edffdb582585f6d2a4e7167b506d10 = L.circleMarker(
+                [35.1579093342302, 129.055135862983],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0548845f7626aaf2c01c902a108dc1db = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5643ce7084d9d6a9aa22a9687557ce87 = $(`<div id="html_5643ce7084d9d6a9aa22a9687557ce87" style="width: 100.0%; height: 100.0%;">20200239 | 20200729<br>부산진구 부산광역시 부산진구 부전동 가야대로 763-1<br>원인: nan<br>규모(W×L×D): 0.8×0.8×2.5m<br>정확도: 번지</div>`)[0];
+                popup_0548845f7626aaf2c01c902a108dc1db.setContent(html_5643ce7084d9d6a9aa22a9687557ce87);
+            
+        
+
+        circle_marker_91edffdb582585f6d2a4e7167b506d10.bindPopup(popup_0548845f7626aaf2c01c902a108dc1db)
+        ;
+
+        
+    
+    
+            var circle_marker_76ece60392ba62c1916ce07bdd8dd18b = L.circleMarker(
+                [35.3168191195245, 129.202485346975],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_fdfb4db560153478b23e9e531f1f3492 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_547a80fed39372a836d12cd025d69e56 = $(`<div id="html_547a80fed39372a836d12cd025d69e56" style="width: 100.0%; height: 100.0%;">20200242 | 20200725<br>기장군 부산광역시 기장군 정관면 달산리 44-45<br>원인: nan<br>규모(W×L×D): 1.2×7.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_fdfb4db560153478b23e9e531f1f3492.setContent(html_547a80fed39372a836d12cd025d69e56);
+            
+        
+
+        circle_marker_76ece60392ba62c1916ce07bdd8dd18b.bindPopup(popup_fdfb4db560153478b23e9e531f1f3492)
+        ;
+
+        
+    
+    
+            var circle_marker_dfe53589124f8958457848a27f65e567 = L.circleMarker(
+                [35.309765514974, 129.22886113025],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c8f68d4d49c6e28f133c249dd168af15 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_480ca5efe53e98e0eb1ed5230a1121df = $(`<div id="html_480ca5efe53e98e0eb1ed5230a1121df" style="width: 100.0%; height: 100.0%;">20200269 | 20200724<br>기장군 부산광역시 기장군 일광면 원리 748-2<br>원인: nan<br>규모(W×L×D): 5.0×10.0×6.0m<br>정확도: 번지</div>`)[0];
+                popup_c8f68d4d49c6e28f133c249dd168af15.setContent(html_480ca5efe53e98e0eb1ed5230a1121df);
+            
+        
+
+        circle_marker_dfe53589124f8958457848a27f65e567.bindPopup(popup_c8f68d4d49c6e28f133c249dd168af15)
+        ;
+
+        
+    
+    
+            var circle_marker_722381f72593605936e7cd18686294f9 = L.circleMarker(
+                [35.1958187468277, 129.061594814272],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_58ee735227d897abde2b9d672b2f5cb2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bba8a75ad8fad83edc145ed3f35ef1e4 = $(`<div id="html_bba8a75ad8fad83edc145ed3f35ef1e4" style="width: 100.0%; height: 100.0%;">20200311 | 20200812<br>동래구 부산광역시 동래구 사직동 802-4<br>원인: nan<br>규모(W×L×D): 0.8×0.8×2.0m<br>정확도: 번지</div>`)[0];
+                popup_58ee735227d897abde2b9d672b2f5cb2.setContent(html_bba8a75ad8fad83edc145ed3f35ef1e4);
+            
+        
+
+        circle_marker_722381f72593605936e7cd18686294f9.bindPopup(popup_58ee735227d897abde2b9d672b2f5cb2)
+        ;
+
+        
+    
+    
+            var circle_marker_49953c35f1b50fbb2d14f4f01e01068b = L.circleMarker(
+                [35.1464061593025, 129.097188871439],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_bbb27ef58e2729feef4b361002b468c7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_39498f5b83f682f5cb304e6a9703e197 = $(`<div id="html_39498f5b83f682f5cb304e6a9703e197" style="width: 100.0%; height: 100.0%;">20200312 | 20200728<br>남구 부산광역시 남구 대연동 209-4<br>원인: nan<br>규모(W×L×D): 2.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_bbb27ef58e2729feef4b361002b468c7.setContent(html_39498f5b83f682f5cb304e6a9703e197);
+            
+        
+
+        circle_marker_49953c35f1b50fbb2d14f4f01e01068b.bindPopup(popup_bbb27ef58e2729feef4b361002b468c7)
+        ;
+
+        
+    
+    
+            var circle_marker_9fb27ac37710d41830e0ef65439c7844 = L.circleMarker(
+                [35.1453480507873, 129.043869378513],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_53b63d2e4deea5da3cd82a48f42b536f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_084f290126d8712e14d7177931388526 = $(`<div id="html_084f290126d8712e14d7177931388526" style="width: 100.0%; height: 100.0%;">20200313 | 20200723<br>동구 부산광역시 동구 범일동 1542-7<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.7m<br>정확도: 번지</div>`)[0];
+                popup_53b63d2e4deea5da3cd82a48f42b536f.setContent(html_084f290126d8712e14d7177931388526);
+            
+        
+
+        circle_marker_9fb27ac37710d41830e0ef65439c7844.bindPopup(popup_53b63d2e4deea5da3cd82a48f42b536f)
+        ;
+
+        
+    
+    
+            var circle_marker_4538e93c3b9174a0f118e448e99e92fc = L.circleMarker(
+                [35.1395112653002, 129.064684572129],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8f0239a1fada28b1a3f07602fbf1788b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1f3f9c05d33c9d498008fdc9134c1c48 = $(`<div id="html_1f3f9c05d33c9d498008fdc9134c1c48" style="width: 100.0%; height: 100.0%;">20200314 | 20200723<br>동구 부산광역시 동구 범일동 830-100<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.7m<br>정확도: 번지</div>`)[0];
+                popup_8f0239a1fada28b1a3f07602fbf1788b.setContent(html_1f3f9c05d33c9d498008fdc9134c1c48);
+            
+        
+
+        circle_marker_4538e93c3b9174a0f118e448e99e92fc.bindPopup(popup_8f0239a1fada28b1a3f07602fbf1788b)
+        ;
+
+        
+    
+    
+            var circle_marker_1f376c40492460b66369e30bea89e3c8 = L.circleMarker(
+                [35.1404153323347, 129.051029589362],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c40ae5fd5ca5f582745507eab44583ca = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a0fa494503b946fc78541cf5e8a2943f = $(`<div id="html_a0fa494503b946fc78541cf5e8a2943f" style="width: 100.0%; height: 100.0%;">20200315 | 20200723<br>동구 부산광역시 동구 범일동 1453-8<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.5m<br>정확도: 번지</div>`)[0];
+                popup_c40ae5fd5ca5f582745507eab44583ca.setContent(html_a0fa494503b946fc78541cf5e8a2943f);
+            
+        
+
+        circle_marker_1f376c40492460b66369e30bea89e3c8.bindPopup(popup_c40ae5fd5ca5f582745507eab44583ca)
+        ;
+
+        
+    
+    
+            var circle_marker_7a2d6b7cde07265f3ed0e5e4cf4af942 = L.circleMarker(
+                [35.1231442518787, 129.099923039386],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_960ef5d4a0f7b10f2c185a3936020a51 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3786313763b5cab2455ba148c67bd032 = $(`<div id="html_3786313763b5cab2455ba148c67bd032" style="width: 100.0%; height: 100.0%;">20200316 | 20200715<br>남구 부산광역시 남구 용당동 525-7<br>원인: nan<br>규모(W×L×D): 1.0×3.8×1.5m<br>정확도: 번지</div>`)[0];
+                popup_960ef5d4a0f7b10f2c185a3936020a51.setContent(html_3786313763b5cab2455ba148c67bd032);
+            
+        
+
+        circle_marker_7a2d6b7cde07265f3ed0e5e4cf4af942.bindPopup(popup_960ef5d4a0f7b10f2c185a3936020a51)
+        ;
+
+        
+    
+    
+            var circle_marker_6bfecf89779c4450a5dc729691168ae8 = L.circleMarker(
+                [35.1342699047641, 129.070039634778],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8be300251c07fbfb50feec330f2ecf3e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9d11fc3012ebc159e6195c3d2aa593fa = $(`<div id="html_9d11fc3012ebc159e6195c3d2aa593fa" style="width: 100.0%; height: 100.0%;">20200317 | 20200711<br>남구 부산광역시 남구 문현동 920-4<br>원인: nan<br>규모(W×L×D): 1.0×2.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_8be300251c07fbfb50feec330f2ecf3e.setContent(html_9d11fc3012ebc159e6195c3d2aa593fa);
+            
+        
+
+        circle_marker_6bfecf89779c4450a5dc729691168ae8.bindPopup(popup_8be300251c07fbfb50feec330f2ecf3e)
+        ;
+
+        
+    
+    
+            var circle_marker_f496531bd03aae51c9d9168816a0c61f = L.circleMarker(
+                [35.2087002539976, 129.080221288627],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0c583a58b0835418822d653fb94a1dd8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_676910223e06761aee26a9faaea599f7 = $(`<div id="html_676910223e06761aee26a9faaea599f7" style="width: 100.0%; height: 100.0%;">20200318 | 20200707<br>동래구 부산광역시 동래구 명륜동 652-24<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_0c583a58b0835418822d653fb94a1dd8.setContent(html_676910223e06761aee26a9faaea599f7);
+            
+        
+
+        circle_marker_f496531bd03aae51c9d9168816a0c61f.bindPopup(popup_0c583a58b0835418822d653fb94a1dd8)
+        ;
+
+        
+    
+    
+            var circle_marker_02373886c510c584cf165a3ffcfcebac = L.circleMarker(
+                [35.0608950220947, 128.974047349174],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_e70c1ef89cfbe7a65e843d0f0b42b398 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a2028e6cb41ac83277003a3883cf6b67 = $(`<div id="html_a2028e6cb41ac83277003a3883cf6b67" style="width: 100.0%; height: 100.0%;">20210002 | 20210315<br>사하구 부산광역시 사하구 다대동 927-17<br>원인: nan<br>규모(W×L×D): 0.5×0.7×1.2m<br>정확도: 번지</div>`)[0];
+                popup_e70c1ef89cfbe7a65e843d0f0b42b398.setContent(html_a2028e6cb41ac83277003a3883cf6b67);
+            
+        
+
+        circle_marker_02373886c510c584cf165a3ffcfcebac.bindPopup(popup_e70c1ef89cfbe7a65e843d0f0b42b398)
+        ;
+
+        
+    
+    
+            var circle_marker_5cab5eacee5fb9079ccb3e40342492f1 = L.circleMarker(
+                [35.1055165743727, 129.003664667067],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c554117f2db7b06413c6a1be17c98ccb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_930f0bbd76acf9f86fcd2e9fb140c024 = $(`<div id="html_930f0bbd76acf9f86fcd2e9fb140c024" style="width: 100.0%; height: 100.0%;">20210009 | 20210422<br>사하구 부산광역시 사하구 괴정동 203-31<br>원인: nan<br>규모(W×L×D): 2.0×4.0×5.0m<br>정확도: 번지</div>`)[0];
+                popup_c554117f2db7b06413c6a1be17c98ccb.setContent(html_930f0bbd76acf9f86fcd2e9fb140c024);
+            
+        
+
+        circle_marker_5cab5eacee5fb9079ccb3e40342492f1.bindPopup(popup_c554117f2db7b06413c6a1be17c98ccb)
+        ;
+
+        
+    
+    
+            var circle_marker_776261b45af735e577db3ad639418e8c = L.circleMarker(
+                [35.0560284315716, 128.969406939667],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8c3c4b67ee913bdbc6f332ae5bd50969 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_43e4f8d7091303d55952f03e471a60db = $(`<div id="html_43e4f8d7091303d55952f03e471a60db" style="width: 100.0%; height: 100.0%;">20210012 | 20210617<br>사하구 부산광역시 사하구 다대동 943-3<br>원인: nan<br>규모(W×L×D): 1.4×2.4×1.2m<br>정확도: 번지</div>`)[0];
+                popup_8c3c4b67ee913bdbc6f332ae5bd50969.setContent(html_43e4f8d7091303d55952f03e471a60db);
+            
+        
+
+        circle_marker_776261b45af735e577db3ad639418e8c.bindPopup(popup_8c3c4b67ee913bdbc6f332ae5bd50969)
+        ;
+
+        
+    
+    
+            var circle_marker_e6156d6a31a9a1c9446f940f91c30f73 = L.circleMarker(
+                [35.1177536623177, 129.019256692906],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_41da3e290c5307ab3872cb6975185e60 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ad97ce2aea41dafedeb700baf4dde4f7 = $(`<div id="html_ad97ce2aea41dafedeb700baf4dde4f7" style="width: 100.0%; height: 100.0%;">20210019 | 20210614<br>서구 부산광역시 서구 동대신동3가 63-315<br>원인: nan<br>규모(W×L×D): 0.8×10.0×1.4m<br>정확도: 번지</div>`)[0];
+                popup_41da3e290c5307ab3872cb6975185e60.setContent(html_ad97ce2aea41dafedeb700baf4dde4f7);
+            
+        
+
+        circle_marker_e6156d6a31a9a1c9446f940f91c30f73.bindPopup(popup_41da3e290c5307ab3872cb6975185e60)
+        ;
+
+        
+    
+    
+            var circle_marker_0a369d764878867c05b0a2c97be5a757 = L.circleMarker(
+                [35.1198557352796, 129.111879297538],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_16d13ad9c62a45a805cc47e025457db2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b2bcdff0f5dfece139b0ccdb27efaf86 = $(`<div id="html_b2bcdff0f5dfece139b0ccdb27efaf86" style="width: 100.0%; height: 100.0%;">20210038 | 20210513<br>남구 부산광역시 남구 용호동 370-18<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_16d13ad9c62a45a805cc47e025457db2.setContent(html_b2bcdff0f5dfece139b0ccdb27efaf86);
+            
+        
+
+        circle_marker_0a369d764878867c05b0a2c97be5a757.bindPopup(popup_16d13ad9c62a45a805cc47e025457db2)
+        ;
+
+        
+    
+    
+            var circle_marker_17b247a8165fcaa8b1cb0f206425e46c = L.circleMarker(
+                [35.1869626047531, 128.989853912157],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_43357a643e5cc78ebb7098b845c0b3bb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d821deeee80c19b30e467f7d4a9df9b6 = $(`<div id="html_d821deeee80c19b30e467f7d4a9df9b6" style="width: 100.0%; height: 100.0%;">20210050 | 20210610<br>사상구 부산광역시 사상구 모라동 모라동 453<br>원인: nan<br>규모(W×L×D): 1.5×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_43357a643e5cc78ebb7098b845c0b3bb.setContent(html_d821deeee80c19b30e467f7d4a9df9b6);
+            
+        
+
+        circle_marker_17b247a8165fcaa8b1cb0f206425e46c.bindPopup(popup_43357a643e5cc78ebb7098b845c0b3bb)
+        ;
+
+        
+    
+    
+            var circle_marker_4fd7a2c4f1a25c97e62d2d84467886d1 = L.circleMarker(
+                [35.1964470006086, 128.994331923636],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_24a505ce208dd87db4eac9be128601a4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8d28d8e5027b65a06b842741556d62a2 = $(`<div id="html_8d28d8e5027b65a06b842741556d62a2" style="width: 100.0%; height: 100.0%;">20210051 | 20210518<br>북구 부산광역시 북구 구포동 1089<br>원인: nan<br>규모(W×L×D): 1.5×1.5×1.0m<br>정확도: 번지</div>`)[0];
+                popup_24a505ce208dd87db4eac9be128601a4.setContent(html_8d28d8e5027b65a06b842741556d62a2);
+            
+        
+
+        circle_marker_4fd7a2c4f1a25c97e62d2d84467886d1.bindPopup(popup_24a505ce208dd87db4eac9be128601a4)
+        ;
+
+        
+    
+    
+            var circle_marker_7b4d922c441ab2d042f2a1764dc68707 = L.circleMarker(
+                [35.2407838957474, 129.068247326326],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_5f737a4fb281f32b454b7f7119b32290 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8f6d514986da9a5b926e4d07a5de0299 = $(`<div id="html_8f6d514986da9a5b926e4d07a5de0299" style="width: 100.0%; height: 100.0%;">20210063 | 20210818<br>금정구 부산광역시 금정구 장전동 산2-12<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_5f737a4fb281f32b454b7f7119b32290.setContent(html_8f6d514986da9a5b926e4d07a5de0299);
+            
+        
+
+        circle_marker_7b4d922c441ab2d042f2a1764dc68707.bindPopup(popup_5f737a4fb281f32b454b7f7119b32290)
+        ;
+
+        
+    
+    
+            var circle_marker_917e0f7df972e60b53a03211d8c16eaf = L.circleMarker(
+                [35.1784247190051, 128.993163205492],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_a5c6081d96244586513916d8e4da2d7d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d613cf3f6867622485ee7f22507e29c6 = $(`<div id="html_d613cf3f6867622485ee7f22507e29c6" style="width: 100.0%; height: 100.0%;">20210066 | 20210824<br>사상구 부산광역시 사상구 덕포동 산 8-41<br>원인: nan<br>규모(W×L×D): 5.0×4.0×3.0m<br>정확도: 번지</div>`)[0];
+                popup_a5c6081d96244586513916d8e4da2d7d.setContent(html_d613cf3f6867622485ee7f22507e29c6);
+            
+        
+
+        circle_marker_917e0f7df972e60b53a03211d8c16eaf.bindPopup(popup_a5c6081d96244586513916d8e4da2d7d)
+        ;
+
+        
+    
+    
+            var circle_marker_9c075d82547e17684ee8df2cae5262bd = L.circleMarker(
+                [35.1630964305764, 129.082700792591],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_d18eda61ca995a7019e9a075d80699be = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c24180968f60df800491747d1237b12c = $(`<div id="html_c24180968f60df800491747d1237b12c" style="width: 100.0%; height: 100.0%;">20210101 | 20210506<br>연제구 부산광역시 연제구 연산동 산 181-1<br>원인: nan<br>규모(W×L×D): 0.8×7.0×1.3m<br>정확도: 번지</div>`)[0];
+                popup_d18eda61ca995a7019e9a075d80699be.setContent(html_c24180968f60df800491747d1237b12c);
+            
+        
+
+        circle_marker_9c075d82547e17684ee8df2cae5262bd.bindPopup(popup_d18eda61ca995a7019e9a075d80699be)
+        ;
+
+        
+    
+    
+            var circle_marker_ce794e4598657b16454eaba0b12cebed = L.circleMarker(
+                [35.1944325345462, 129.085105233832],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8989ffde282a9c0597ec98ce5ab89982 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c911804b436dfa0bcc906d747e15a7d4 = $(`<div id="html_c911804b436dfa0bcc906d747e15a7d4" style="width: 100.0%; height: 100.0%;">20210102 | 20210308<br>연제구 부산광역시 연제구 거제동 1465-1<br>원인: nan<br>규모(W×L×D): 3.0×4.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_8989ffde282a9c0597ec98ce5ab89982.setContent(html_c911804b436dfa0bcc906d747e15a7d4);
+            
+        
+
+        circle_marker_ce794e4598657b16454eaba0b12cebed.bindPopup(popup_8989ffde282a9c0597ec98ce5ab89982)
+        ;
+
+        
+    
+    
+            var circle_marker_3166548b6ef40b8401bafdb046256be4 = L.circleMarker(
+                [35.1921812245375, 129.063012528181],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_cd115a3e1d5006c3bf6009c8da15393f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0a9bd941c2ab53ed2d26472f8e3ec394 = $(`<div id="html_0a9bd941c2ab53ed2d26472f8e3ec394" style="width: 100.0%; height: 100.0%;">20210103 | 20210614<br>연제구 부산광역시 연제구 거제동 1427-38<br>원인: nan<br>규모(W×L×D): 2.0×3.0×2.4m<br>정확도: 번지</div>`)[0];
+                popup_cd115a3e1d5006c3bf6009c8da15393f.setContent(html_0a9bd941c2ab53ed2d26472f8e3ec394);
+            
+        
+
+        circle_marker_3166548b6ef40b8401bafdb046256be4.bindPopup(popup_cd115a3e1d5006c3bf6009c8da15393f)
+        ;
+
+        
+    
+    
+            var circle_marker_f18493b002d5785b67bca6d79bb67db2 = L.circleMarker(
+                [35.0858513083001, 128.974317902384],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_f5407e1d42db544069a86d7c2bc4e33e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b845809785652d8feb1b003e159dfc56 = $(`<div id="html_b845809785652d8feb1b003e159dfc56" style="width: 100.0%; height: 100.0%;">20210146 | 20210824<br>사하구 부산광역시 사하구 신평동 572<br>원인: nan<br>규모(W×L×D): 3.0×10.0×5.0m<br>정확도: 번지</div>`)[0];
+                popup_f5407e1d42db544069a86d7c2bc4e33e.setContent(html_b845809785652d8feb1b003e159dfc56);
+            
+        
+
+        circle_marker_f18493b002d5785b67bca6d79bb67db2.bindPopup(popup_f5407e1d42db544069a86d7c2bc4e33e)
+        ;
+
+        
+    
+    
+            var circle_marker_bc970dc002dcb70352790465818c91a1 = L.circleMarker(
+                [35.1984681625234, 128.994866711366],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_b3648cc4adde4a3d00106e2d3af0006f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f0f2deb2fac14c9f05b362324c9bf053 = $(`<div id="html_f0f2deb2fac14c9f05b362324c9bf053" style="width: 100.0%; height: 100.0%;">20210152 | 20211006<br>북구 부산광역시 북구 구포동 구포동 918-5<br>원인: nan<br>규모(W×L×D): 0.5×0.7×1.0m<br>정확도: 번지</div>`)[0];
+                popup_b3648cc4adde4a3d00106e2d3af0006f.setContent(html_f0f2deb2fac14c9f05b362324c9bf053);
+            
+        
+
+        circle_marker_bc970dc002dcb70352790465818c91a1.bindPopup(popup_b3648cc4adde4a3d00106e2d3af0006f)
+        ;
+
+        
+    
+    
+            var circle_marker_5375d0fd5ed7aebfec6353af9a8e11d4 = L.circleMarker(
+                [35.1966661135286, 129.012168928801],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_99fb1a619796c4e2cb3ea99d92bff359 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5ed75b307095e3a68a24b3350a5cb352 = $(`<div id="html_5ed75b307095e3a68a24b3350a5cb352" style="width: 100.0%; height: 100.0%;">20210153 | 20210824<br>북구 부산광역시 북구 구포동 모분재로 148-1<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_99fb1a619796c4e2cb3ea99d92bff359.setContent(html_5ed75b307095e3a68a24b3350a5cb352);
+            
+        
+
+        circle_marker_5375d0fd5ed7aebfec6353af9a8e11d4.bindPopup(popup_99fb1a619796c4e2cb3ea99d92bff359)
+        ;
+
+        
+    
+    
+            var circle_marker_d1f7fa0191288b5baf743ee7869b9ab2 = L.circleMarker(
+                [35.2075751528636, 129.082024869828],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_63a29b31b56452850d541382458cb7b6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6429350840b534af753b091dd6d94503 = $(`<div id="html_6429350840b534af753b091dd6d94503" style="width: 100.0%; height: 100.0%;">20210170 | 20210806<br>동래구 부산광역시 동래구 명륜동 632-1<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.8m<br>정확도: 번지</div>`)[0];
+                popup_63a29b31b56452850d541382458cb7b6.setContent(html_6429350840b534af753b091dd6d94503);
+            
+        
+
+        circle_marker_d1f7fa0191288b5baf743ee7869b9ab2.bindPopup(popup_63a29b31b56452850d541382458cb7b6)
+        ;
+
+        
+    
+    
+            var circle_marker_be5531cba3c34819b496f44e14a42ccd = L.circleMarker(
+                [35.1191651261966, 129.011137312888],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_dd2b45013e7cbaec9601ab1879ea1cff = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b1bf6b9f775c5c363df1d5ef08407c77 = $(`<div id="html_b1bf6b9f775c5c363df1d5ef08407c77" style="width: 100.0%; height: 100.0%;">20210171 | 20211115<br>서구 부산광역시 서구 서대신동3가 꽃마을로 59<br>원인: nan<br>규모(W×L×D): 0.3×0.3×1.5m<br>정확도: 번지</div>`)[0];
+                popup_dd2b45013e7cbaec9601ab1879ea1cff.setContent(html_b1bf6b9f775c5c363df1d5ef08407c77);
+            
+        
+
+        circle_marker_be5531cba3c34819b496f44e14a42ccd.bindPopup(popup_dd2b45013e7cbaec9601ab1879ea1cff)
+        ;
+
+        
+    
+    
+            var circle_marker_bd7688d734ae0f7b4ac6a4cd3e1814cc = L.circleMarker(
+                [35.2134636455187, 129.036563597852],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c3633249cdd1a8490fab0c9c0c97daf7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_79005158ae27fdce67142d82abcc56fb = $(`<div id="html_79005158ae27fdce67142d82abcc56fb" style="width: 100.0%; height: 100.0%;">20220042 | 20220120<br>북구 부산광역시 북구 만덕동 792<br>원인: nan<br>규모(W×L×D): 0.5×0.7×1.0m<br>정확도: 번지</div>`)[0];
+                popup_c3633249cdd1a8490fab0c9c0c97daf7.setContent(html_79005158ae27fdce67142d82abcc56fb);
+            
+        
+
+        circle_marker_bd7688d734ae0f7b4ac6a4cd3e1814cc.bindPopup(popup_c3633249cdd1a8490fab0c9c0c97daf7)
+        ;
+
+        
+    
+    
+            var circle_marker_ac1181acba61cc59efc53a07ab933f1b = L.circleMarker(
+                [35.0987703506613, 129.016709431033],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0347f694736e0d7685fd0431861a9e49 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_080cdbfb126d0a589f5732b5f894767e = $(`<div id="html_080cdbfb126d0a589f5732b5f894767e" style="width: 100.0%; height: 100.0%;">20220055 | 20220104<br>서구 부산광역시 서구 아미동2가 85-3<br>원인: nan<br>규모(W×L×D): 0.25×25.0×3.0m<br>정확도: 번지</div>`)[0];
+                popup_0347f694736e0d7685fd0431861a9e49.setContent(html_080cdbfb126d0a589f5732b5f894767e);
+            
+        
+
+        circle_marker_ac1181acba61cc59efc53a07ab933f1b.bindPopup(popup_0347f694736e0d7685fd0431861a9e49)
+        ;
+
+        
+    
+    
+            var circle_marker_782394abf9e384f7e0e4b9f3126075d7 = L.circleMarker(
+                [35.2163506598001, 129.115347853692],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_478f7a0f2766732a462674382b5b0a41 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_481a8bc3035f2eae1eb4bfa84c6d4ac0 = $(`<div id="html_481a8bc3035f2eae1eb4bfa84c6d4ac0" style="width: 100.0%; height: 100.0%;">20220086 | 20220625<br>금정구 부산광역시 금정구 금사동 금사동 110-6<br>원인: nan<br>규모(W×L×D): 1.0×1.5×1.5m<br>정확도: 번지</div>`)[0];
+                popup_478f7a0f2766732a462674382b5b0a41.setContent(html_481a8bc3035f2eae1eb4bfa84c6d4ac0);
+            
+        
+
+        circle_marker_782394abf9e384f7e0e4b9f3126075d7.bindPopup(popup_478f7a0f2766732a462674382b5b0a41)
+        ;
+
+        
+    
+    
+            var circle_marker_a03741ae0feb9f6398f2b261fb579b40 = L.circleMarker(
+                [35.1954118382742, 129.097855983445],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0a6a203412b20cf077b44678a97a3337 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cb834de8d9bfeb08629b2d88d6e981d3 = $(`<div id="html_cb834de8d9bfeb08629b2d88d6e981d3" style="width: 100.0%; height: 100.0%;">20220147 | 20220711<br>동래구 부산광역시 동래구 안락동 안락동 732-1<br>원인: nan<br>규모(W×L×D): 0.1×0.1×1.33m<br>정확도: 번지</div>`)[0];
+                popup_0a6a203412b20cf077b44678a97a3337.setContent(html_cb834de8d9bfeb08629b2d88d6e981d3);
+            
+        
+
+        circle_marker_a03741ae0feb9f6398f2b261fb579b40.bindPopup(popup_0a6a203412b20cf077b44678a97a3337)
+        ;
+
+        
+    
+    
+            var circle_marker_e28b853f73b1133ab9b37a132823a3d2 = L.circleMarker(
+                [35.1535424958709, 129.03268590213],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_a59f2e3228c7e601f69503770b3ecc2a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_56a06e7ae4460b87d7705d61285264f9 = $(`<div id="html_56a06e7ae4460b87d7705d61285264f9" style="width: 100.0%; height: 100.0%;">20220160 | 20220902<br>부산진구 부산광역시 부산진구 가야동 221-2<br>원인: nan<br>규모(W×L×D): 2.0×2.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_a59f2e3228c7e601f69503770b3ecc2a.setContent(html_56a06e7ae4460b87d7705d61285264f9);
+            
+        
+
+        circle_marker_e28b853f73b1133ab9b37a132823a3d2.bindPopup(popup_a59f2e3228c7e601f69503770b3ecc2a)
+        ;
+
+        
+    
+    
+            var circle_marker_7995d43004655c533ce4275c18a7cd47 = L.circleMarker(
+                [35.1745300633457, 129.090542542276],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_9006316178a8cbe732b34bb0b7812bc6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_931c08b6034a687d98ec5f23b65780c5 = $(`<div id="html_931c08b6034a687d98ec5f23b65780c5" style="width: 100.0%; height: 100.0%;">20220161 | 20221126<br>연제구 부산광역시 연제구 연산동 연수로 179<br>원인: nan<br>규모(W×L×D): 2.0×3.0×3.0m<br>정확도: 번지</div>`)[0];
+                popup_9006316178a8cbe732b34bb0b7812bc6.setContent(html_931c08b6034a687d98ec5f23b65780c5);
+            
+        
+
+        circle_marker_7995d43004655c533ce4275c18a7cd47.bindPopup(popup_9006316178a8cbe732b34bb0b7812bc6)
+        ;
+
+        
+    
+    
+            var circle_marker_4b65f94ac81b972fd1a64ec92e9a8615 = L.circleMarker(
+                [35.0885383347239, 129.002726416264],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_b52d0d00e96cfe8875e222195f8d837a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5749d789975d8b54bad82fab9d7cc9f2 = $(`<div id="html_5749d789975d8b54bad82fab9d7cc9f2" style="width: 100.0%; height: 100.0%;">20220162 | 20220704<br>사하구 부산광역시 사하구 감천동 486-3<br>원인: nan<br>규모(W×L×D): 0.5×0.6×1.9m<br>정확도: 번지</div>`)[0];
+                popup_b52d0d00e96cfe8875e222195f8d837a.setContent(html_5749d789975d8b54bad82fab9d7cc9f2);
+            
+        
+
+        circle_marker_4b65f94ac81b972fd1a64ec92e9a8615.bindPopup(popup_b52d0d00e96cfe8875e222195f8d837a)
+        ;
+
+        
+    
+    
+            var circle_marker_f72348272151bffec54b90eaf76a2d21 = L.circleMarker(
+                [35.1035931354764, 128.999602861196],
+                {"bubblingMouseEvents": true, "color": "#9467bd", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9467bd", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_c5cf4d5a5901a1cc3735b38b427daeba = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3b9cca5c5c423a5bc1026c2a56dd3659 = $(`<div id="html_3b9cca5c5c423a5bc1026c2a56dd3659" style="width: 100.0%; height: 100.0%;">20220163 | 20220928<br>사하구 부산광역시 사하구 괴정동 230<br>원인: nan<br>규모(W×L×D): 4.0×1.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_c5cf4d5a5901a1cc3735b38b427daeba.setContent(html_3b9cca5c5c423a5bc1026c2a56dd3659);
+            
+        
+
+        circle_marker_f72348272151bffec54b90eaf76a2d21.bindPopup(popup_c5cf4d5a5901a1cc3735b38b427daeba)
+        ;
+
+        
+    
+    
+            var circle_marker_4cd1bc2a6df067e7a2db59e9696f27df = L.circleMarker(
+                [35.1558804826482, 128.983460017317],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_fd7f697c047c9c5a1899c6aea4e60f30 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_defbe757e62ff6ecbcc611b4a04f5c18 = $(`<div id="html_defbe757e62ff6ecbcc611b4a04f5c18" style="width: 100.0%; height: 100.0%;">20230001 | 20230105<br>사상구 부산광역시 사상구 감전동 131-1<br>원인: nan<br>규모(W×L×D): 0.5×0.8×3.0m<br>정확도: 번지</div>`)[0];
+                popup_fd7f697c047c9c5a1899c6aea4e60f30.setContent(html_defbe757e62ff6ecbcc611b4a04f5c18);
+            
+        
+
+        circle_marker_4cd1bc2a6df067e7a2db59e9696f27df.bindPopup(popup_fd7f697c047c9c5a1899c6aea4e60f30)
+        ;
+
+        
+    
+    
+            var circle_marker_e5d1be469c22d685baf15d18b84be7ae = L.circleMarker(
+                [35.1552386949985, 128.983419635795],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_39589143cb416fc5002e08a8660cb884 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c3a4d0f4ee69e433495c449b0ec45182 = $(`<div id="html_c3a4d0f4ee69e433495c449b0ec45182" style="width: 100.0%; height: 100.0%;">20230015 | 20230324<br>사상구 부산광역시 사상구 감전동 새벽로 160<br>원인: nan<br>규모(W×L×D): 1.0×1.5×0.5m<br>정확도: 번지</div>`)[0];
+                popup_39589143cb416fc5002e08a8660cb884.setContent(html_c3a4d0f4ee69e433495c449b0ec45182);
+            
+        
+
+        circle_marker_e5d1be469c22d685baf15d18b84be7ae.bindPopup(popup_39589143cb416fc5002e08a8660cb884)
+        ;
+
+        
+    
+    
+            var circle_marker_c627840697b849bdd1a54367b80ca547 = L.circleMarker(
+                [35.0775290251585, 128.953159386929],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_96402c64be578b4472133ed4975bbfd2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ae1b4133a1351b16f2d8003eaa4c2848 = $(`<div id="html_ae1b4133a1351b16f2d8003eaa4c2848" style="width: 100.0%; height: 100.0%;">20230021 | 20230411<br>사하구 부산광역시 사하구 장림동 1086-3<br>원인: nan<br>규모(W×L×D): 0.8×1.3×0.4m<br>정확도: 번지</div>`)[0];
+                popup_96402c64be578b4472133ed4975bbfd2.setContent(html_ae1b4133a1351b16f2d8003eaa4c2848);
+            
+        
+
+        circle_marker_c627840697b849bdd1a54367b80ca547.bindPopup(popup_96402c64be578b4472133ed4975bbfd2)
+        ;
+
+        
+    
+    
+            var circle_marker_9dd700e3b9f60574797f1adf79528407 = L.circleMarker(
+                [35.1376003833537, 129.100519243797],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_418497401ac7296b961798828964c262 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_462bca64fe1a34dcd722e835aee7d6c8 = $(`<div id="html_462bca64fe1a34dcd722e835aee7d6c8" style="width: 100.0%; height: 100.0%;">20230093 | 20230717<br>남구 부산광역시 남구 대연동 수영로 경성대부경대역<br>원인: nan<br>규모(W×L×D): 3.3×8.0×0.4m<br>정확도: 도로/동</div>`)[0];
+                popup_418497401ac7296b961798828964c262.setContent(html_462bca64fe1a34dcd722e835aee7d6c8);
+            
+        
+
+        circle_marker_9dd700e3b9f60574797f1adf79528407.bindPopup(popup_418497401ac7296b961798828964c262)
+        ;
+
+        
+    
+    
+            var circle_marker_096e7530ba3669f6aaefecd6113a8bee = L.circleMarker(
+                [35.1533265173069, 129.030191089784],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_83db0636c92f585f3d96f5b827cc56ac = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_17f0340e5178e4eeffe2c35078f60e2c = $(`<div id="html_17f0340e5178e4eeffe2c35078f60e2c" style="width: 100.0%; height: 100.0%;">20230103 | 20230519<br>부산진구 부산광역시 부산진구 가야동 가야대로532<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.3m<br>정확도: 번지</div>`)[0];
+                popup_83db0636c92f585f3d96f5b827cc56ac.setContent(html_17f0340e5178e4eeffe2c35078f60e2c);
+            
+        
+
+        circle_marker_096e7530ba3669f6aaefecd6113a8bee.bindPopup(popup_83db0636c92f585f3d96f5b827cc56ac)
+        ;
+
+        
+    
+    
+            var circle_marker_b0244c6756f4ce2b5572119df8c2c797 = L.circleMarker(
+                [35.1572030744245, 129.058129839487],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_fc66b78965a13173088897973d42e6ee = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_08f96ea747778b4f013276c466a6e316 = $(`<div id="html_08f96ea747778b4f013276c466a6e316" style="width: 100.0%; height: 100.0%;">20230104 | 20230611<br>부산진구 부산광역시 부산진구 부전동 서면로74<br>원인: nan<br>규모(W×L×D): 0.3×0.3×2.0m<br>정확도: 번지</div>`)[0];
+                popup_fc66b78965a13173088897973d42e6ee.setContent(html_08f96ea747778b4f013276c466a6e316);
+            
+        
+
+        circle_marker_b0244c6756f4ce2b5572119df8c2c797.bindPopup(popup_fc66b78965a13173088897973d42e6ee)
+        ;
+
+        
+    
+    
+            var circle_marker_8edcc46200dff0fb2669f272976c5718 = L.circleMarker(
+                [35.2142657985023, 129.045277260245],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0e133e35ac78313528560d663128534f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5da2fd50e7b1dd3fb8d81307ed4bbd07 = $(`<div id="html_5da2fd50e7b1dd3fb8d81307ed4bbd07" style="width: 100.0%; height: 100.0%;">20230105 | 20230719<br>북구 부산광역시 북구 만덕동 51-9<br>원인: nan<br>규모(W×L×D): 3.5×2.0×3.5m<br>정확도: 번지</div>`)[0];
+                popup_0e133e35ac78313528560d663128534f.setContent(html_5da2fd50e7b1dd3fb8d81307ed4bbd07);
+            
+        
+
+        circle_marker_8edcc46200dff0fb2669f272976c5718.bindPopup(popup_0e133e35ac78313528560d663128534f)
+        ;
+
+        
+    
+    
+            var circle_marker_1f5f618db934a0188e4af5881741266e = L.circleMarker(
+                [35.1236022495167, 128.849198026878],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8ef17a4818de6f3277281bc35bcec669 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f305b2f21974158b33f50ab768bfff2b = $(`<div id="html_f305b2f21974158b33f50ab768bfff2b" style="width: 100.0%; height: 100.0%;">20230117 | 20230801<br>강서구 부산광역시 강서구 구랑동 878-8<br>원인: nan<br>규모(W×L×D): 1.2×10.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_8ef17a4818de6f3277281bc35bcec669.setContent(html_f305b2f21974158b33f50ab768bfff2b);
+            
+        
+
+        circle_marker_1f5f618db934a0188e4af5881741266e.bindPopup(popup_8ef17a4818de6f3277281bc35bcec669)
+        ;
+
+        
+    
+    
+            var circle_marker_ef91c55fa027e8811af16e4cefcb0ba3 = L.circleMarker(
+                [35.1977459106366, 128.994963003331],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_80da518545372e4b3b85a321521d58d9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_22bc3fde6f72c593e327fe677e669fd9 = $(`<div id="html_22bc3fde6f72c593e327fe677e669fd9" style="width: 100.0%; height: 100.0%;">20230144 | 20230810<br>북구 부산광역시 북구 구포동 1084-3<br>원인: nan<br>규모(W×L×D): 2.0×1.4×1.0m<br>정확도: 번지</div>`)[0];
+                popup_80da518545372e4b3b85a321521d58d9.setContent(html_22bc3fde6f72c593e327fe677e669fd9);
+            
+        
+
+        circle_marker_ef91c55fa027e8811af16e4cefcb0ba3.bindPopup(popup_80da518545372e4b3b85a321521d58d9)
+        ;
+
+        
+    
+    
+            var circle_marker_c0f959759c043671f922bbe881de74dc = L.circleMarker(
+                [35.1948292885034, 129.006108151458],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2ebf95823e70ab80ee83df6ac4330a2b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_011895394180dfecccee9f6a4813ae1b = $(`<div id="html_011895394180dfecccee9f6a4813ae1b" style="width: 100.0%; height: 100.0%;">20230145 | 20230810<br>북구 부산광역시 북구 구포동 1263-22<br>원인: nan<br>규모(W×L×D): 1.2×1.5×0.9m<br>정확도: 번지</div>`)[0];
+                popup_2ebf95823e70ab80ee83df6ac4330a2b.setContent(html_011895394180dfecccee9f6a4813ae1b);
+            
+        
+
+        circle_marker_c0f959759c043671f922bbe881de74dc.bindPopup(popup_2ebf95823e70ab80ee83df6ac4330a2b)
+        ;
+
+        
+    
+    
+            var circle_marker_6f1b44c8bb8322a0ff43cd529f0da47f = L.circleMarker(
+                [35.157909135509705, 129.06217177306965],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_07dfa47211e700d61c565a550ace2a24 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_26fb5ca402a1a9e2c4473c4f890225d8 = $(`<div id="html_26fb5ca402a1a9e2c4473c4f890225d8" style="width: 100.0%; height: 100.0%;">20230153 | 20230831<br>부산진구 부산광역시 부산진구 전포동 동천로 103<br>원인: nan<br>규모(W×L×D): 1.0×1.4×1.1m<br>정확도: 번지</div>`)[0];
+                popup_07dfa47211e700d61c565a550ace2a24.setContent(html_26fb5ca402a1a9e2c4473c4f890225d8);
+            
+        
+
+        circle_marker_6f1b44c8bb8322a0ff43cd529f0da47f.bindPopup(popup_07dfa47211e700d61c565a550ace2a24)
+        ;
+
+        
+    
+    
+            var circle_marker_aa20efb6e84bc8b79c2ad2ac5eade2e3 = L.circleMarker(
+                [35.2100374526824, 129.021787024529],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0e17cc1944cdbf80bd367b1829d4cbe3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_301f571dfea88249e3e3cf7f1cc19dc7 = $(`<div id="html_301f571dfea88249e3e3cf7f1cc19dc7" style="width: 100.0%; height: 100.0%;">20230154 | 20230824<br>북구 부산광역시 북구 덕천동 132-67<br>원인: nan<br>규모(W×L×D): 1.2×1.2×0.2m<br>정확도: 번지</div>`)[0];
+                popup_0e17cc1944cdbf80bd367b1829d4cbe3.setContent(html_301f571dfea88249e3e3cf7f1cc19dc7);
+            
+        
+
+        circle_marker_aa20efb6e84bc8b79c2ad2ac5eade2e3.bindPopup(popup_0e17cc1944cdbf80bd367b1829d4cbe3)
+        ;
+
+        
+    
+    
+            var circle_marker_b3d833184debdf38116551b9b439c696 = L.circleMarker(
+                [35.1886384200955, 128.987588443373],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_9854cf9bba3d319e7621ebaccf6ead66 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9bb205c85f9dff2f420e2b7b20f2a764 = $(`<div id="html_9bb205c85f9dff2f420e2b7b20f2a764" style="width: 100.0%; height: 100.0%;">20230171 | 20230812<br>사상구 부산광역시 사상구 모라동 사상구 모라로64<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.3m<br>정확도: 번지</div>`)[0];
+                popup_9854cf9bba3d319e7621ebaccf6ead66.setContent(html_9bb205c85f9dff2f420e2b7b20f2a764);
+            
+        
+
+        circle_marker_b3d833184debdf38116551b9b439c696.bindPopup(popup_9854cf9bba3d319e7621ebaccf6ead66)
+        ;
+
+        
+    
+    
+            var circle_marker_75a6fc94deccd069a7b1f3424ca80d52 = L.circleMarker(
+                [35.1289355825243, 128.978186476927],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7bc2b98dc685f48b1f02a535ad52b03a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ff4ff9b6940ef66fc35c5dd3dae17777 = $(`<div id="html_ff4ff9b6940ef66fc35c5dd3dae17777" style="width: 100.0%; height: 100.0%;">20230172 | 20230830<br>사상구 부산광역시 사상구 엄궁동 사상구 엄궁로 154<br>원인: nan<br>규모(W×L×D): 0.5×0.5×1.0m<br>정확도: 번지</div>`)[0];
+                popup_7bc2b98dc685f48b1f02a535ad52b03a.setContent(html_ff4ff9b6940ef66fc35c5dd3dae17777);
+            
+        
+
+        circle_marker_75a6fc94deccd069a7b1f3424ca80d52.bindPopup(popup_7bc2b98dc685f48b1f02a535ad52b03a)
+        ;
+
+        
+    
+    
+            var circle_marker_1a7334143c1687d964e88889de3138a4 = L.circleMarker(
+                [35.2046660713518, 129.076547565414],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0f57d0c5915f115ebee7fec3a7a5b591 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_751bc9d2ff48a292832fb39bb25fd635 = $(`<div id="html_751bc9d2ff48a292832fb39bb25fd635" style="width: 100.0%; height: 100.0%;">20230173 | 20231227<br>동래구 부산광역시 동래구 온천동 1441-13<br>원인: nan<br>규모(W×L×D): 0.6×1.0×2.6m<br>정확도: 번지</div>`)[0];
+                popup_0f57d0c5915f115ebee7fec3a7a5b591.setContent(html_751bc9d2ff48a292832fb39bb25fd635);
+            
+        
+
+        circle_marker_1a7334143c1687d964e88889de3138a4.bindPopup(popup_0f57d0c5915f115ebee7fec3a7a5b591)
+        ;
+
+        
+    
+    
+            var circle_marker_f83b33e0d743d6e17e95bfad449a5024 = L.circleMarker(
+                [35.2286983894187, 129.078685665422],
+                {"bubblingMouseEvents": true, "color": "#8c564b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8c564b", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_f590d31e9426d55e88de10184b63874a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3ed14d92dd49e9ff27270466fa85f38c = $(`<div id="html_3ed14d92dd49e9ff27270466fa85f38c" style="width: 100.0%; height: 100.0%;">20230174 | 20230919<br>금정구 부산광역시 금정구 장전동 소정로 45<br>원인: nan<br>규모(W×L×D): 0.5×0.5×3.0m<br>정확도: 번지</div>`)[0];
+                popup_f590d31e9426d55e88de10184b63874a.setContent(html_3ed14d92dd49e9ff27270466fa85f38c);
+            
+        
+
+        circle_marker_f83b33e0d743d6e17e95bfad449a5024.bindPopup(popup_f590d31e9426d55e88de10184b63874a)
+        ;
+
+        
+    
+    
+            var circle_marker_aef8f77e0156709483c5268712ed0078 = L.circleMarker(
+                [35.1102477943227, 129.095897270285],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_91a581760e6c753d7703121e84bdbbd9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8efb6ff998fb52e3e6eca841c00faa5d = $(`<div id="html_8efb6ff998fb52e3e6eca841c00faa5d" style="width: 100.0%; height: 100.0%;">20240013 | 20240314<br>남구 부산광역시 남구 용당동 신선로 294<br>원인: nan<br>규모(W×L×D): 0.9×1.3×1.5m<br>정확도: 번지</div>`)[0];
+                popup_91a581760e6c753d7703121e84bdbbd9.setContent(html_8efb6ff998fb52e3e6eca841c00faa5d);
+            
+        
+
+        circle_marker_aef8f77e0156709483c5268712ed0078.bindPopup(popup_91a581760e6c753d7703121e84bdbbd9)
+        ;
+
+        
+    
+    
+            var circle_marker_435e8cf6776e48bfcae0dbef2c95a5bb = L.circleMarker(
+                [35.1986315631397, 129.007653049731],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_5740072a4c142411bf24cc9c289d19d3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c35cadbb73d5a692d6ed70f3539edbc5 = $(`<div id="html_c35cadbb73d5a692d6ed70f3539edbc5" style="width: 100.0%; height: 100.0%;">20240016 | 20240419<br>북구 부산광역시 북구 구포동 1222-22<br>원인: nan<br>규모(W×L×D): 0.8×0.8×1.3m<br>정확도: 번지</div>`)[0];
+                popup_5740072a4c142411bf24cc9c289d19d3.setContent(html_c35cadbb73d5a692d6ed70f3539edbc5);
+            
+        
+
+        circle_marker_435e8cf6776e48bfcae0dbef2c95a5bb.bindPopup(popup_5740072a4c142411bf24cc9c289d19d3)
+        ;
+
+        
+    
+    
+            var circle_marker_af5526d1d5564339a0e508d214b8c432 = L.circleMarker(
+                [35.1507575183489, 128.983038843951],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_afe10101210c2a8c8d681deceb0eac8c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a99536ed6cb0b6a09fa00213f6091e8b = $(`<div id="html_a99536ed6cb0b6a09fa00213f6091e8b" style="width: 100.0%; height: 100.0%;">20240017 | 20240430<br>사상구 부산광역시 사상구 감전동 162-22<br>원인: nan<br>규모(W×L×D): 1.5×0.8×2.0m<br>정확도: 번지</div>`)[0];
+                popup_afe10101210c2a8c8d681deceb0eac8c.setContent(html_a99536ed6cb0b6a09fa00213f6091e8b);
+            
+        
+
+        circle_marker_af5526d1d5564339a0e508d214b8c432.bindPopup(popup_afe10101210c2a8c8d681deceb0eac8c)
+        ;
+
+        
+    
+    
+            var circle_marker_16a5b9ed736453d16bbe428cf1b0ead6 = L.circleMarker(
+                [35.1734507612238, 129.094228750346],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_3823522cb6434c34198e0db681e85b24 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6b0318ae777b0ec1d2aba27e85739532 = $(`<div id="html_6b0318ae777b0ec1d2aba27e85739532" style="width: 100.0%; height: 100.0%;">20240019 | 20240507<br>연제구 부산광역시 연제구 연산동 1799-3<br>원인: nan<br>규모(W×L×D): 0.7×3.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_3823522cb6434c34198e0db681e85b24.setContent(html_6b0318ae777b0ec1d2aba27e85739532);
+            
+        
+
+        circle_marker_16a5b9ed736453d16bbe428cf1b0ead6.bindPopup(popup_3823522cb6434c34198e0db681e85b24)
+        ;
+
+        
+    
+    
+            var circle_marker_2c9c8dc63be55f04d8dedf33d4d4ed32 = L.circleMarker(
+                [35.1507575183489, 128.983038843951],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_d1ee8e60fbf70cddd8a8c46e8c3816fe = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c134e34eedcf1e49037426b99d0fc69b = $(`<div id="html_c134e34eedcf1e49037426b99d0fc69b" style="width: 100.0%; height: 100.0%;">20240020 | 20240505<br>사상구 부산광역시 사상구 감전동 162-22<br>원인: nan<br>규모(W×L×D): 1.5×2.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_d1ee8e60fbf70cddd8a8c46e8c3816fe.setContent(html_c134e34eedcf1e49037426b99d0fc69b);
+            
+        
+
+        circle_marker_2c9c8dc63be55f04d8dedf33d4d4ed32.bindPopup(popup_d1ee8e60fbf70cddd8a8c46e8c3816fe)
+        ;
+
+        
+    
+    
+            var circle_marker_11cfbfd0967b8a650cc25f17b1e61327 = L.circleMarker(
+                [35.0935541532123, 129.02416420229],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_486e54617239e1b807bf5c15600bc26f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dedd2063b50ca9b285ffc893ec057b9f = $(`<div id="html_dedd2063b50ca9b285ffc893ec057b9f" style="width: 100.0%; height: 100.0%;">20240023 | 20240529<br>서구 부산광역시 서구 충무동1가 39-11<br>원인: nan<br>규모(W×L×D): 1.5×2.3×0.7m<br>정확도: 번지</div>`)[0];
+                popup_486e54617239e1b807bf5c15600bc26f.setContent(html_dedd2063b50ca9b285ffc893ec057b9f);
+            
+        
+
+        circle_marker_11cfbfd0967b8a650cc25f17b1e61327.bindPopup(popup_486e54617239e1b807bf5c15600bc26f)
+        ;
+
+        
+    
+    
+            var circle_marker_69b1db162ecfb837e37dbd5a40ceccb6 = L.circleMarker(
+                [35.1060066840054, 129.002402284336],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_6a2aa672196ffba0f2a0dae2036a19c9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_41ee28e30acbd922c55162a08b2f6b9b = $(`<div id="html_41ee28e30acbd922c55162a08b2f6b9b" style="width: 100.0%; height: 100.0%;">20240054 | 20240425<br>사하구 부산광역시 사하구 괴정동 207-52<br>원인: nan<br>규모(W×L×D): 6.0×2.7×0.7m<br>정확도: 번지</div>`)[0];
+                popup_6a2aa672196ffba0f2a0dae2036a19c9.setContent(html_41ee28e30acbd922c55162a08b2f6b9b);
+            
+        
+
+        circle_marker_69b1db162ecfb837e37dbd5a40ceccb6.bindPopup(popup_6a2aa672196ffba0f2a0dae2036a19c9)
+        ;
+
+        
+    
+    
+            var circle_marker_f37a0769252cdd5e39cbcd8a7f912f5f = L.circleMarker(
+                [35.1518945963667, 128.981983466037],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7951fa8f73b1d72ac179527ed5cadc42 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_753f3e973a22b9f312dee48f238b2331 = $(`<div id="html_753f3e973a22b9f312dee48f238b2331" style="width: 100.0%; height: 100.0%;">20240059 | 20240724<br>사상구 부산광역시 사상구 감전동 163-6<br>원인: nan<br>규모(W×L×D): 1.0×1.5×3.0m<br>정확도: 번지</div>`)[0];
+                popup_7951fa8f73b1d72ac179527ed5cadc42.setContent(html_753f3e973a22b9f312dee48f238b2331);
+            
+        
+
+        circle_marker_f37a0769252cdd5e39cbcd8a7f912f5f.bindPopup(popup_7951fa8f73b1d72ac179527ed5cadc42)
+        ;
+
+        
+    
+    
+            var circle_marker_73db2fb6574f5f25686e1c778fcb9ee1 = L.circleMarker(
+                [35.2662482477982, 129.019034802584],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_eb6c1701df58067a9c5fc875e1e5a1af = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d9c708178b00f746d71cac21c918673c = $(`<div id="html_d9c708178b00f746d71cac21c918673c" style="width: 100.0%; height: 100.0%;">20240061 | 20240128<br>북구 부산광역시 북구 금곡동 56-1<br>원인: nan<br>규모(W×L×D): 0.3×0.5×2.1m<br>정확도: 번지</div>`)[0];
+                popup_eb6c1701df58067a9c5fc875e1e5a1af.setContent(html_d9c708178b00f746d71cac21c918673c);
+            
+        
+
+        circle_marker_73db2fb6574f5f25686e1c778fcb9ee1.bindPopup(popup_eb6c1701df58067a9c5fc875e1e5a1af)
+        ;
+
+        
+    
+    
+            var circle_marker_9e8b289fac5124a7b85903da13081d8a = L.circleMarker(
+                [35.0953490944911, 129.022470560816],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_8c8e75a54c80e5ab1a83797bafd94f71 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_876ef05515ee153946a56d576123cdad = $(`<div id="html_876ef05515ee153946a56d576123cdad" style="width: 100.0%; height: 100.0%;">20240064 | 20240725<br>서구 부산광역시 서구 충무동2가 4-5<br>원인: nan<br>규모(W×L×D): 0.6×1.2×1.0m<br>정확도: 번지</div>`)[0];
+                popup_8c8e75a54c80e5ab1a83797bafd94f71.setContent(html_876ef05515ee153946a56d576123cdad);
+            
+        
+
+        circle_marker_9e8b289fac5124a7b85903da13081d8a.bindPopup(popup_8c8e75a54c80e5ab1a83797bafd94f71)
+        ;
+
+        
+    
+    
+            var circle_marker_719c80313d1244a21a9ed4c5a9034ed2 = L.circleMarker(
+                [35.0748900365828, 129.064558667858],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_e16ae46490ea6a21f9d22e552cb42c15 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_848ec5ae887b52f77c1bd3579d61784d = $(`<div id="html_848ec5ae887b52f77c1bd3579d61784d" style="width: 100.0%; height: 100.0%;">20240066 | 20240728<br>영도구 부산광역시 영도구 동삼동 510-42<br>원인: nan<br>규모(W×L×D): 3.0×2.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_e16ae46490ea6a21f9d22e552cb42c15.setContent(html_848ec5ae887b52f77c1bd3579d61784d);
+            
+        
+
+        circle_marker_719c80313d1244a21a9ed4c5a9034ed2.bindPopup(popup_e16ae46490ea6a21f9d22e552cb42c15)
+        ;
+
+        
+    
+    
+            var circle_marker_2141f08b4b0606331623113d83d884fc = L.circleMarker(
+                [35.2046660713518, 129.076547565414],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_ed82fc9170aae5cb3ee8f51f46b04ae2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_89aae6f5cc74e63223c75c2760366327 = $(`<div id="html_89aae6f5cc74e63223c75c2760366327" style="width: 100.0%; height: 100.0%;">20240068 | 20240703<br>동래구 부산광역시 동래구 온천동 1441-13<br>원인: nan<br>규모(W×L×D): 0.6×1.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_ed82fc9170aae5cb3ee8f51f46b04ae2.setContent(html_89aae6f5cc74e63223c75c2760366327);
+            
+        
+
+        circle_marker_2141f08b4b0606331623113d83d884fc.bindPopup(popup_ed82fc9170aae5cb3ee8f51f46b04ae2)
+        ;
+
+        
+    
+    
+            var circle_marker_731d789e55f4a1b2771422e9cd9a98d0 = L.circleMarker(
+                [35.1980126068948, 129.053250110751],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_5b6d6a8166fd0e12046bb29dec5b3299 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3fe81b670b7a06ad12de0b1b981237e6 = $(`<div id="html_3fe81b670b7a06ad12de0b1b981237e6" style="width: 100.0%; height: 100.0%;">20240069 | 20240509<br>동래구 부산광역시 동래구 사직동 981-99<br>원인: nan<br>규모(W×L×D): 1.0×1.0×0.2m<br>정확도: 번지</div>`)[0];
+                popup_5b6d6a8166fd0e12046bb29dec5b3299.setContent(html_3fe81b670b7a06ad12de0b1b981237e6);
+            
+        
+
+        circle_marker_731d789e55f4a1b2771422e9cd9a98d0.bindPopup(popup_5b6d6a8166fd0e12046bb29dec5b3299)
+        ;
+
+        
+    
+    
+            var circle_marker_7e8d50e62496c62400cf331ce59216e3 = L.circleMarker(
+                [35.151930773525, 128.982498620709],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_4979f8ac3451e959f259e97ff9363b06 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7993adae67e3c88af77b357b339aca2f = $(`<div id="html_7993adae67e3c88af77b357b339aca2f" style="width: 100.0%; height: 100.0%;">20240074 | 20240820<br>사상구 부산광역시 사상구 감전동 162-26<br>원인: nan<br>규모(W×L×D): 7.0×5.0×3.5m<br>정확도: 번지</div>`)[0];
+                popup_4979f8ac3451e959f259e97ff9363b06.setContent(html_7993adae67e3c88af77b357b339aca2f);
+            
+        
+
+        circle_marker_7e8d50e62496c62400cf331ce59216e3.bindPopup(popup_4979f8ac3451e959f259e97ff9363b06)
+        ;
+
+        
+    
+    
+            var circle_marker_76527e18ff01fad6786bba1e79ffa69d = L.circleMarker(
+                [35.1512248403916, 128.981603486211],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_71fd67b847391d7f08d5898e65c43883 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_74413b02582af5a1d067978de3aeea2f = $(`<div id="html_74413b02582af5a1d067978de3aeea2f" style="width: 100.0%; height: 100.0%;">20240075 | 20240821<br>사상구 부산광역시 사상구 감전동 163-11<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_71fd67b847391d7f08d5898e65c43883.setContent(html_74413b02582af5a1d067978de3aeea2f);
+            
+        
+
+        circle_marker_76527e18ff01fad6786bba1e79ffa69d.bindPopup(popup_71fd67b847391d7f08d5898e65c43883)
+        ;
+
+        
+    
+    
+            var circle_marker_8e6f1c92a3be4b480a8d610d8390bae0 = L.circleMarker(
+                [35.0867560897163, 129.063877735946],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_eadb5096c1a03446bfab347ff94c3a9f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b5b3eae0e9c61b8587cfe9f35d53f91d = $(`<div id="html_b5b3eae0e9c61b8587cfe9f35d53f91d" style="width: 100.0%; height: 100.0%;">20240086 | 20240910<br>영도구 부산광역시 영도구 청학동 85<br>원인: nan<br>규모(W×L×D): 1.0×1.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_eadb5096c1a03446bfab347ff94c3a9f.setContent(html_b5b3eae0e9c61b8587cfe9f35d53f91d);
+            
+        
+
+        circle_marker_8e6f1c92a3be4b480a8d610d8390bae0.bindPopup(popup_eadb5096c1a03446bfab347ff94c3a9f)
+        ;
+
+        
+    
+    
+            var circle_marker_fe89c253bf114ed46ef7e9d2ea46d6be = L.circleMarker(
+                [35.1508176032109, 129.011588399581],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7114759ae25638de9038131e83dea6ab = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_21643ae84ae3b7815d11244833b127cc = $(`<div id="html_21643ae84ae3b7815d11244833b127cc" style="width: 100.0%; height: 100.0%;">20240087 | 20240731<br>사상구 부산광역시 사상구 주례동 187-3<br>원인: nan<br>규모(W×L×D): 1.0×1.8×1.0m<br>정확도: 번지</div>`)[0];
+                popup_7114759ae25638de9038131e83dea6ab.setContent(html_21643ae84ae3b7815d11244833b127cc);
+            
+        
+
+        circle_marker_fe89c253bf114ed46ef7e9d2ea46d6be.bindPopup(popup_7114759ae25638de9038131e83dea6ab)
+        ;
+
+        
+    
+    
+            var circle_marker_5edaff09e944b2d5a898f2a93225d886 = L.circleMarker(
+                [35.1492527288942, 128.981221777586],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_dc2e4a158ec9595ca4856432d1e68ed3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_34ced8b08d7eb3ac3a3b35dc78f04cfc = $(`<div id="html_34ced8b08d7eb3ac3a3b35dc78f04cfc" style="width: 100.0%; height: 100.0%;">20240095 | 20240921<br>사상구 부산광역시 사상구 학장동 719-8<br>원인: nan<br>규모(W×L×D): 5.0×7.0×5.0m<br>정확도: 번지</div>`)[0];
+                popup_dc2e4a158ec9595ca4856432d1e68ed3.setContent(html_34ced8b08d7eb3ac3a3b35dc78f04cfc);
+            
+        
+
+        circle_marker_5edaff09e944b2d5a898f2a93225d886.bindPopup(popup_dc2e4a158ec9595ca4856432d1e68ed3)
+        ;
+
+        
+    
+    
+            var circle_marker_894ab1ac954905477df5f91cda7ec595 = L.circleMarker(
+                [35.1491394825171, 128.98196897061],
+                {"bubblingMouseEvents": true, "color": "#e377c2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e377c2", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_3cd109f0925857811aa15fd95e565641 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0ad2d89e818c29a56fbb92e04e3c27e0 = $(`<div id="html_0ad2d89e818c29a56fbb92e04e3c27e0" style="width: 100.0%; height: 100.0%;">20240096 | 20240921<br>사상구 부산광역시 사상구 학장동 226-1<br>원인: nan<br>규모(W×L×D): 4.0×8.0×5.0m<br>정확도: 번지</div>`)[0];
+                popup_3cd109f0925857811aa15fd95e565641.setContent(html_0ad2d89e818c29a56fbb92e04e3c27e0);
+            
+        
+
+        circle_marker_894ab1ac954905477df5f91cda7ec595.bindPopup(popup_3cd109f0925857811aa15fd95e565641)
+        ;
+
+        
+    
+    
+            var circle_marker_5fbe2b0f73235aaa3748816b7c87da76 = L.circleMarker(
+                [35.1204771829871, 129.047374438599],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_3e410387e74814e5d0788abbdd57f7b7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0e3bb6ec784f4482aa36136ece7f995b = $(`<div id="html_0e3bb6ec784f4482aa36136ece7f995b" style="width: 100.0%; height: 100.0%;">20250008 | 20250207<br>동구 부산광역시 동구 초량동 45-46<br>원인: nan<br>규모(W×L×D): 6.0×25.0×0.1m<br>정확도: 번지</div>`)[0];
+                popup_3e410387e74814e5d0788abbdd57f7b7.setContent(html_0e3bb6ec784f4482aa36136ece7f995b);
+            
+        
+
+        circle_marker_5fbe2b0f73235aaa3748816b7c87da76.bindPopup(popup_3e410387e74814e5d0788abbdd57f7b7)
+        ;
+
+        
+    
+    
+            var circle_marker_06c74f08a89d29fc28715ba17e070286 = L.circleMarker(
+                [35.1925850747482, 129.134850712828],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_7eafc19d192e19237c8e14d532a091b0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f68bb49feec0a8bf9e0739d30c1cbb1e = $(`<div id="html_f68bb49feec0a8bf9e0739d30c1cbb1e" style="width: 100.0%; height: 100.0%;">20250025 | 20250204<br>해운대구 부산광역시 해운대구 재송동 1183-1<br>원인: nan<br>규모(W×L×D): 1.5×2.0×1.0m<br>정확도: 번지</div>`)[0];
+                popup_7eafc19d192e19237c8e14d532a091b0.setContent(html_f68bb49feec0a8bf9e0739d30c1cbb1e);
+            
+        
+
+        circle_marker_06c74f08a89d29fc28715ba17e070286.bindPopup(popup_7eafc19d192e19237c8e14d532a091b0)
+        ;
+
+        
+    
+    
+            var circle_marker_8a56e117bd89fd63edfb2bc51f0838c1 = L.circleMarker(
+                [35.1501151587778, 128.981326297661],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_6698c2a3617e94e2dd16afd3ad9d7da0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e309a40d983d213249090b6d83296480 = $(`<div id="html_e309a40d983d213249090b6d83296480" style="width: 100.0%; height: 100.0%;">20250029 | 20250413<br>사상구 부산광역시 사상구 학장동 708-10<br>원인: nan<br>규모(W×L×D): 3.0×4.5×5.0m<br>정확도: 번지</div>`)[0];
+                popup_6698c2a3617e94e2dd16afd3ad9d7da0.setContent(html_e309a40d983d213249090b6d83296480);
+            
+        
+
+        circle_marker_8a56e117bd89fd63edfb2bc51f0838c1.bindPopup(popup_6698c2a3617e94e2dd16afd3ad9d7da0)
+        ;
+
+        
+    
+    
+            var circle_marker_1221f114084bae94dd2d23188ed1b288 = L.circleMarker(
+                [35.1428634168091, 128.88742923381],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_730dc5e1c13058f680de999d879e5c55 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_013e8535e06a849ec2fa2fb9151a8b00 = $(`<div id="html_013e8535e06a849ec2fa2fb9151a8b00" style="width: 100.0%; height: 100.0%;">20250052 | 20250513<br>강서구 부산광역시 강서구 범방동 1913<br>원인: nan<br>규모(W×L×D): 15.0×30.0×3.0m<br>정확도: 번지</div>`)[0];
+                popup_730dc5e1c13058f680de999d879e5c55.setContent(html_013e8535e06a849ec2fa2fb9151a8b00);
+            
+        
+
+        circle_marker_1221f114084bae94dd2d23188ed1b288.bindPopup(popup_730dc5e1c13058f680de999d879e5c55)
+        ;
+
+        
+    
+    
+            var circle_marker_9172063e794aca9b80e6084452ea2a32 = L.circleMarker(
+                [35.3279078503658, 129.180287831153],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_37c81ed81dd95c5b46d9e4d301aabcbb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ba13f897e3048c8050571fb1ed35f913 = $(`<div id="html_ba13f897e3048c8050571fb1ed35f913" style="width: 100.0%; height: 100.0%;">20250074 | 20250630<br>기장군 부산광역시 기장군 정관읍 가동1<br>원인: nan<br>규모(W×L×D): 0.15×0.15×1.2m<br>정확도: 번지</div>`)[0];
+                popup_37c81ed81dd95c5b46d9e4d301aabcbb.setContent(html_ba13f897e3048c8050571fb1ed35f913);
+            
+        
+
+        circle_marker_9172063e794aca9b80e6084452ea2a32.bindPopup(popup_37c81ed81dd95c5b46d9e4d301aabcbb)
+        ;
+
+        
+    
+    
+            var circle_marker_43dd0112273cc894f7a59694d728d83f = L.circleMarker(
+                [35.1652830763795, 129.159615359505],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_32e5ec4bf9cd7d11653c23a521fb6ce5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a3c691fb4071215dcb7fcaa2e9470a91 = $(`<div id="html_a3c691fb4071215dcb7fcaa2e9470a91" style="width: 100.0%; height: 100.0%;">20250086 | 20250711<br>해운대구 부산광역시 해운대구 우동 558-9<br>원인: nan<br>규모(W×L×D): 0.3×0.3×1.4m<br>정확도: 번지</div>`)[0];
+                popup_32e5ec4bf9cd7d11653c23a521fb6ce5.setContent(html_a3c691fb4071215dcb7fcaa2e9470a91);
+            
+        
+
+        circle_marker_43dd0112273cc894f7a59694d728d83f.bindPopup(popup_32e5ec4bf9cd7d11653c23a521fb6ce5)
+        ;
+
+        
+    
+    
+            var circle_marker_c6c4c01c5b38b7a639ad341ff37a599f = L.circleMarker(
+                [35.1511819305168, 128.982595549591],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2b9ab9c164b069a2e1cf58d3c95a4030 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_397f09e3a556f54432ef39acdb466be6 = $(`<div id="html_397f09e3a556f54432ef39acdb466be6" style="width: 100.0%; height: 100.0%;">20250089 | 20250714<br>사상구 부산광역시 사상구 감전동 감전동 162-10<br>원인: nan<br>규모(W×L×D): 1.0×2.0×2.0m<br>정확도: 번지</div>`)[0];
+                popup_2b9ab9c164b069a2e1cf58d3c95a4030.setContent(html_397f09e3a556f54432ef39acdb466be6);
+            
+        
+
+        circle_marker_c6c4c01c5b38b7a639ad341ff37a599f.bindPopup(popup_2b9ab9c164b069a2e1cf58d3c95a4030)
+        ;
+
+        
+    
+    
+            var circle_marker_51a792dd419baa910a34a5cfbadfa639 = L.circleMarker(
+                [35.1559978564541, 129.122078281515],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_dd5e86d033f0bb4b737e220ac9f62c7e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c2a04b5c85559754f0da914bff05b2da = $(`<div id="html_c2a04b5c85559754f0da914bff05b2da" style="width: 100.0%; height: 100.0%;">20250091 | 20250409<br>수영구 부산광역시 수영구 민락동 175-6<br>원인: nan<br>규모(W×L×D): 0.6×1.5×1.0m<br>정확도: 번지</div>`)[0];
+                popup_dd5e86d033f0bb4b737e220ac9f62c7e.setContent(html_c2a04b5c85559754f0da914bff05b2da);
+            
+        
+
+        circle_marker_51a792dd419baa910a34a5cfbadfa639.bindPopup(popup_dd5e86d033f0bb4b737e220ac9f62c7e)
+        ;
+
+        
+    
+    
+            var circle_marker_cb7762de9e7f416b5f41584b2786d313 = L.circleMarker(
+                [35.1682863993313, 129.117222807968],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_41a944247c87ab9acfa56676abff454f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d89ab89969f26ff3800b946a2f0ce0e7 = $(`<div id="html_d89ab89969f26ff3800b946a2f0ce0e7" style="width: 100.0%; height: 100.0%;">20250092 | 20250619<br>수영구 부산광역시 수영구 수영동 444-14<br>원인: nan<br>규모(W×L×D): 0.5×0.5×1.0m<br>정확도: 번지</div>`)[0];
+                popup_41a944247c87ab9acfa56676abff454f.setContent(html_d89ab89969f26ff3800b946a2f0ce0e7);
+            
+        
+
+        circle_marker_cb7762de9e7f416b5f41584b2786d313.bindPopup(popup_41a944247c87ab9acfa56676abff454f)
+        ;
+
+        
+    
+    
+            var circle_marker_8f6a6c21646d467d711fa91d481e7a24 = L.circleMarker(
+                [35.2024206412631, 128.999233746753],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_69a9ff7d1a07ae70195ff2de04698afe = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2a8c1acdf13be25bf2e5aca623e2804f = $(`<div id="html_2a8c1acdf13be25bf2e5aca623e2804f" style="width: 100.0%; height: 100.0%;">20250128 | 20250811<br>북구 부산광역시 북구 구포동 969-1<br>원인: nan<br>규모(W×L×D): 1.6×0.6×2.2m<br>정확도: 번지</div>`)[0];
+                popup_69a9ff7d1a07ae70195ff2de04698afe.setContent(html_2a8c1acdf13be25bf2e5aca623e2804f);
+            
+        
+
+        circle_marker_8f6a6c21646d467d711fa91d481e7a24.bindPopup(popup_69a9ff7d1a07ae70195ff2de04698afe)
+        ;
+
+        
+    
+    
+            var circle_marker_08e8e3e82a8b770429b8c4c63c59e4e3 = L.circleMarker(
+                [35.2202772469226, 129.007948530349],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_b0668311b1920a5eb5157650c0660a77 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fd476462e367d776f13671dde94e61d6 = $(`<div id="html_fd476462e367d776f13671dde94e61d6" style="width: 100.0%; height: 100.0%;">20250132 | 20250713<br>북구 부산광역시 북구 덕천동 561-1<br>원인: nan<br>규모(W×L×D): 0.3×0.4×2.0m<br>정확도: 번지</div>`)[0];
+                popup_b0668311b1920a5eb5157650c0660a77.setContent(html_fd476462e367d776f13671dde94e61d6);
+            
+        
+
+        circle_marker_08e8e3e82a8b770429b8c4c63c59e4e3.bindPopup(popup_b0668311b1920a5eb5157650c0660a77)
+        ;
+
+        
+    
+    
+            var circle_marker_5eb37001752dc461280ba4dbb065de35 = L.circleMarker(
+                [35.2131886482925, 129.035066777407],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0c5745564579b378250f435b932e11e4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3e7ba951a3c35cd7c9b5695cee0a2357 = $(`<div id="html_3e7ba951a3c35cd7c9b5695cee0a2357" style="width: 100.0%; height: 100.0%;">20250133 | 20250728<br>북구 부산광역시 북구 만덕동 607-1<br>원인: nan<br>규모(W×L×D): 0.3×0.4×2.0m<br>정확도: 번지</div>`)[0];
+                popup_0c5745564579b378250f435b932e11e4.setContent(html_3e7ba951a3c35cd7c9b5695cee0a2357);
+            
+        
+
+        circle_marker_5eb37001752dc461280ba4dbb065de35.bindPopup(popup_0c5745564579b378250f435b932e11e4)
+        ;
+
+        
+    
+    
+            var circle_marker_781ce7f3da6e7939c2308694445b0554 = L.circleMarker(
+                [35.1538924630243, 128.981595112552],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_46e2ae83227e07a27c33f5da138ecd73 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_93228dcf00921e133ffc20cb9b3d3f7a = $(`<div id="html_93228dcf00921e133ffc20cb9b3d3f7a" style="width: 100.0%; height: 100.0%;">20250156 | 20250812<br>사상구 부산광역시 사상구 감전동 감전동 143-16<br>원인: nan<br>규모(W×L×D): 5.0×3.0×1.5m<br>정확도: 번지</div>`)[0];
+                popup_46e2ae83227e07a27c33f5da138ecd73.setContent(html_93228dcf00921e133ffc20cb9b3d3f7a);
+            
+        
+
+        circle_marker_781ce7f3da6e7939c2308694445b0554.bindPopup(popup_46e2ae83227e07a27c33f5da138ecd73)
+        ;
+
+        
+    
+    
+            var circle_marker_e5750db9e05677c6043e4cf108330f2d = L.circleMarker(
+                [35.0643912060233, 129.013896534368],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_2289d20ff1914d5765049f53fa2d73e6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_df6e673c120c8eccb27e8b493532cde5 = $(`<div id="html_df6e673c120c8eccb27e8b493532cde5" style="width: 100.0%; height: 100.0%;">20250178 | 20251027<br>서구 부산광역시 서구 암남동 621-69<br>원인: nan<br>규모(W×L×D): 3.0×3.0×4.0m<br>정확도: 번지</div>`)[0];
+                popup_2289d20ff1914d5765049f53fa2d73e6.setContent(html_df6e673c120c8eccb27e8b493532cde5);
+            
+        
+
+        circle_marker_e5750db9e05677c6043e4cf108330f2d.bindPopup(popup_2289d20ff1914d5765049f53fa2d73e6)
+        ;
+
+        
+    
+    
+            var circle_marker_6bb18d46fc4b61c0388aba404bf08b7d = L.circleMarker(
+                [35.1878928980657, 128.991743717855],
+                {"bubblingMouseEvents": true, "color": "#bcbd22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bcbd22", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_f0664357c6b3b01a876e19096a1b1d70 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bdb11a4f217b6f0c8f96d9f76104e242 = $(`<div id="html_bdb11a4f217b6f0c8f96d9f76104e242" style="width: 100.0%; height: 100.0%;">20260026 | 20260405<br>사상구 부산광역시 사상구 모라동 1357<br>원인: nan<br>규모(W×L×D): 2.0×1.5×0.5m<br>정확도: 번지</div>`)[0];
+                popup_f0664357c6b3b01a876e19096a1b1d70.setContent(html_bdb11a4f217b6f0c8f96d9f76104e242);
+            
+        
+
+        circle_marker_6bb18d46fc4b61c0388aba404bf08b7d.bindPopup(popup_f0664357c6b3b01a876e19096a1b1d70)
+        ;
+
+        
+    
+    
+            var circle_marker_f5575fc5c97ca5743f1f5251aa5e8a51 = L.circleMarker(
+                [35.1490400816531, 129.110240985836],
+                {"bubblingMouseEvents": true, "color": "#bcbd22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bcbd22", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_0160391aace2fc619890144cfa9e836d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f5f88ab873725df85a8efbaf4f045ba1 = $(`<div id="html_f5f88ab873725df85a8efbaf4f045ba1" style="width: 100.0%; height: 100.0%;">20260074 | 20260827<br>수영구 부산광역시 수영구 남천동 남천동 47-1<br>원인: nan<br>규모(W×L×D): 0.05×0.2×1.8m<br>정확도: 번지</div>`)[0];
+                popup_0160391aace2fc619890144cfa9e836d.setContent(html_f5f88ab873725df85a8efbaf4f045ba1);
+            
+        
+
+        circle_marker_f5575fc5c97ca5743f1f5251aa5e8a51.bindPopup(popup_0160391aace2fc619890144cfa9e836d)
+        ;
+
+        
+    
+    
+            var circle_marker_07a464514272d121c751f512aa3508a6 = L.circleMarker(
+                [35.1490400816531, 129.110240985836],
+                {"bubblingMouseEvents": true, "color": "#bcbd22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bcbd22", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_236163b468eb60622e96222019e1e90f);
+        
+    
+        var popup_cbd04caa3eb45bac19920d04d47dd864 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5ed2d9fb03bdda1524509ee4750084d3 = $(`<div id="html_5ed2d9fb03bdda1524509ee4750084d3" style="width: 100.0%; height: 100.0%;">20260075 | 20260827<br>수영구 부산광역시 수영구 남천동 남천동 47-1<br>원인: nan<br>규모(W×L×D): 0.05×0.05×1.8m<br>정확도: 번지</div>`)[0];
+                popup_cbd04caa3eb45bac19920d04d47dd864.setContent(html_5ed2d9fb03bdda1524509ee4750084d3);
+            
+        
+
+        circle_marker_07a464514272d121c751f512aa3508a6.bindPopup(popup_cbd04caa3eb45bac19920d04d47dd864)
+        ;
+
+        
+    
+</script>
+</html>
